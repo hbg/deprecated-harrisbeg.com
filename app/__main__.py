@@ -3,7 +3,8 @@ import datetime
 
 app = Flask(__name__)
 pages = ["Home","About","Contact","Projects"]
-date = datetime.datetime.now().hour
+date = int(datetime.datetime.now().hour)
+print(date)
 @app.route('/')
 def home():
     return render_template("index.html", name=pages[0], date=date)
