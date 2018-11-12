@@ -17,6 +17,13 @@
 			<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
 		  <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 		  <script src="{{ url_for('static', filename='js/rellax.js') }}"></script>
+			{% if (new Date().getHours() < 12)%}
+				<meta name="theme-color" content="#ffd000">
+			{% elif (new Date().getHours() >= 12 && new Date().getHours() < 19) %}
+				<meta name="theme-color" content="#36d1dc">
+			{% else %}
+				<meta name="theme-color" content="#6441a5">
+			{% endif %}
 
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
