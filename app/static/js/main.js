@@ -20,20 +20,20 @@ $(document).on('ready', function() {
 		**/
 		$('body').css("background","-webkit-linear-gradient(to right, #ff5f6d, #ffc371)");
 		$('body').css("background","-webkit-linear-gradient(to right, #ff5f6d, #ffc371)");
-		color("#ffd000");
+		color('#ffd000');
 	}
 	else if (hr >= 12 && hr < 19) {
 		$('body').css("background","-webkit-linear-gradient(to right, #36d1dc, #5b86e5)");
 
 		$('body').css("background","linear-gradient(to right, #36d1dc, #5b86e5)");
-		color("#00d8ff");
+		color('#00d8ff');
 
 	}
 	else {
 		$('body').css("background","-webkit-linear-gradient(to right, #6441a5, #2a0845)");
 
 		$('body').css("background","linear-gradient(to right, #6441a5, #2a0845)");
-		color("#6441a5");
+		color('#6441a5');
 
 	}
 });
