@@ -11,7 +11,7 @@ $(document).on('ready', function() {
 	$('.tooltipped').tooltip();
 
 	var rellax = new Rellax('.rellax');
-	var hr = new Date().getHours() - 8;
+	var hr = new Date().getHours();
 	if (hr < 12) {
 		/**
 		 *	background: #8E2DE2;
