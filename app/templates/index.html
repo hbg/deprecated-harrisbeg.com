@@ -1,0 +1,71 @@
+{% extends "structure.html" %}
+{% block content %}
+		<div class="big">
+			<div class="row">
+			<h1 class="black-text header-text wow animated bounceInLeft left">What I Do</h1>
+		</div>
+			<table class="responsive-table  animated bounce wow">
+				<tbody class="main">
+					<tr>
+						<td class=" roll-cell">
+							<i class="fas fa-code orange-text darken-2"></i>
+							<h4 class="light-text  orange-text darken-3">Develop</h4>
+						</td>
+						<td class="divider"></td>
+
+						<td class=" roll-cell">
+							<i class="fas fa-pencil-alt orange-text darken-2"></i>
+							<h4 class="light-text  orange-text darken-3">Design</h4>
+						</td>
+						<td class="divider"></td>
+
+						<td class=" roll-cell">
+							<i class="fas fa-hammer orange-text darken-2"></i>
+							<h4 class="light-text  orange-text darken-3">Build</h4>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div class="big text-center side-margin div-2">
+					<!--<h1 class="section-icon rellax" data-rellax-speed="-2">
+							<i class="fas fa-user black-text"></i>
+						</h1>-->
+
+					<h1 data-rellax-speed="0" class="rellax">
+						🔥
+					</h1>
+								<h1 class="black-text header-text wow animated bounceInLeft center">Past Work</h1>
+
+			</div>
+			<div class="big side-margin">
+				<div class="row companies" >
+					<div class="col s4  company">
+						<img src="{{ url_for('static', filename='assets/grabify.png') }} "class="height-row-adj center tooltipped" data-position="top" data-tooltip="Grabify"/>
+					</div>
+					<div class="col s4  company">
+												<img src="{{ url_for('static', filename='assets/tc.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="TechnologiCoders"/>
+
+					</div>
+					<div class="col s4 company">
+												<img src="{{ url_for('static', filename='assets/sc_app_icon.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="skinCAM"/>
+
+					</div>
+				</div>
+				<div class="row companies big-margin " >
+					<div class="col s4  company">
+						<img src="{{ url_for('static', filename='assets/msh.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="MySocialHub"/>
+					</div>
+					<div class="col s4  company">
+												<img src="{{ url_for('static', filename='assets/cer.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="UCSD Center for Energy Research" />
+
+					</div>
+					<div class="col s4 company">
+												<img src="{{ url_for('static', filename='assets/mcc.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="UCSD Moores Cancer Center"/>
+
+					</div>
+				</div>
+
+			</div>
+{% endblock %}
