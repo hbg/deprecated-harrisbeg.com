@@ -41,7 +41,5 @@ $(document).on('ready', function() {
 function color(c) {
     var theme = document.querySelector("meta[name=theme-color]");
     theme.setAttribute("content", c);
-    setTimeout(function() {
-        color();
-    }, 3000);
+
 }
