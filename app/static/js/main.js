@@ -6,7 +6,6 @@ $(document).on('ready', function() {
 		                      mobile:       true,       // default
 		                      live:         true        // default
 	}).init();
-	$('.tooltipped').tooltip();
 
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
@@ -42,6 +41,8 @@ $(document).on('ready', function() {
 		$('html').css("background","linear-gradient(to right, #6441a5, #2a0845)");
 	}
 	$('.sidenav').sidenav();
+	$('.tooltipped').tooltip();
+
 });
 
 function color(c) {

@@ -15,6 +15,11 @@ h1 {
 .footer-copyright {
 	background: #000023 !important;
 }
+body {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+}
 .center-margin {
 	margin: 0 auto;
 }
