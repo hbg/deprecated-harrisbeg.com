@@ -10,7 +10,7 @@ h1 {
 	text-align: center;
 }
 .page-footer {
-	background: #000134;
+	background: #000134 !important;
 }
 .footer-copyright {
 	background: #000023 !important;

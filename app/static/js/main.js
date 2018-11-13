@@ -1,4 +1,3 @@
-
 $(document).on('ready', function() {
 	new WOW({
 		                      boxClass:     'wow',      // default
