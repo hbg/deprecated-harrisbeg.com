@@ -6,7 +6,7 @@ import datetime
 app = Flask(__name__)
 #assets = Environment(app)
 #assets.url = app.static_url_path
-##assets.register('scss_all', scss)
+#assets.register('scss_all', scss)
 
 pages = ["Home","About","Contact","Projects"]
 descriptions = ["A developer with no bounds, I have explored many languages and APIs, roamed through different jobs, and attempted to solve things myself for hours on end.", "About","Contact","Projects"]
