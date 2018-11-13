@@ -9,6 +9,12 @@ html, body {
 h1 {
 	text-align: center;
 }
+.page-footer {
+	background: #000134;
+}
+.footer-copyright {
+	background: #000023 !important;
+}
 .center-margin {
 	margin: 0 auto;
 }
@@ -79,6 +85,9 @@ h1 {
 	color: white;
 	font-family: 'Work Sans';
 
+}
+.big-boy-icons {
+	font-size: 25px;
 }
 
 .big {
