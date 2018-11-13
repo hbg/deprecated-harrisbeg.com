@@ -21,7 +21,8 @@
 			<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
 		  <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 		  <script src="{{ url_for('static', filename='js/rellax.js') }}"></script>
-				<meta name="theme-color" content="#00d8ff">
+
+				<meta name="theme-color" content="#000134">
 
 
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
@@ -29,6 +30,23 @@
 
 </head>
 <body>
+	<nav class="fixed" id="nav">
+		<div class="nav-wrapper container">
+      <a href="{{url_for('home')}}">
+				<img id="nav-logo" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="40" height="40">
+			</a>
+
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
+        <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
+				<li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
+				<li><a href="{{url_for('contact')}}" class="white-text">Contact</a></li>
+
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
+    </div>
+	</nav>
 	<div class="scrollable">
 	<div class="mdiv">
 		<img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>

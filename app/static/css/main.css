@@ -24,6 +24,7 @@ h1 {
 .company {
 	height: 100%;
 }
+
 .height-row-adj {
 	width: 100%;
 	display: block;
@@ -40,6 +41,11 @@ h1 {
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 991px) {
+	.companies {
+		width: 66%;
+	}
 }
 @media screen and (max-width: 990px) {
 	.div-2 {
@@ -111,6 +117,9 @@ h1 {
   	left: 50%;
  	 transform: translate(-50%, -50%);
 }
+tr {
+	padding: 0 !important;
+}
 .header-text {
 	font-family: 'Titillium Web';
 	margin-left: 10%;
@@ -142,13 +151,27 @@ h4 {
 .light-text {
 		font-family: 'Work Sans';
 }
-.big-margin {
-	margin-top: 15%;
+
+
+#nav-logo {
+	margin-top: 10px;
 }
-
-
+#nav-mobile {
+	background: black;
+	color: white !important;
+}
+#nav {
+	background: #000134;
+}
 
 .divider {
 	width: 2% !important;
 	background: transparent;
+}
+.transparent {
+	background: transparent;
+}
+.fixed {
+	position: fixed;
+	z-index: 999;
 }
