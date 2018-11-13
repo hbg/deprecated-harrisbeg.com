@@ -1,11 +1,3 @@
-var module = angular.module('harrisBeg',[]);
-module.controller('t', function($scope, $interval) {
-	var interv = function() {
-		$scope.time = Date.now();
-	}
-	interv();
-	$interval(interv, 1000);
-});
 
 $(document).on('ready', function() {
 	new WOW({
