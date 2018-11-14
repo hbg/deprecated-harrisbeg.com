@@ -1,14 +1,15 @@
 from flask import Flask, render_template
-from flask_assets import Environment, Bundle
+#from flask_assets import Environment, Bundle
 
 import datetime
 
 app = Flask(__name__)
+"""
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('scss/about.scss', 'scss/contact.scss', 'scss/projects.scss', filters='pyscss', output='all.css')
 assets.register('scss_all', scss)
-
+"""
 pages = ["Home","About","Contact","Projects"]
 descriptions = ["A developer with no bounds, I have explored many languages and APIs, roamed through different jobs, and attempted to solve things myself for hours on end.", "About","Contact","Projects"]
 
