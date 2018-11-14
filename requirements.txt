@@ -5,4 +5,5 @@ itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.1.0
 Werkzeug==0.14.1
-pyScss==1.3.5
+Flask-Assets==0.9
+
