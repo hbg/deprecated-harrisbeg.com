@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 assets = Environment(app)
 assets.url = app.static_url_path
-scss = Bundle('scss/about.scss', 'scss/contact.scss', 'scss/projects.scss', filters='pyscss', output='all.css')
+scss = Bundle('about.scss', 'contact.scss', 'projects.scss', filters='pyscss', output='all.css')
 assets.register('scss_all', scss)
 
 pages = ["Home","About","Contact","Projects"]

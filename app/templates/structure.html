@@ -28,9 +28,9 @@
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
 			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-			{% assets "style" %}
+			{% assets "scss_all" %}
 			        <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
-			        {% endassets %}
+			{% endassets %}
 </head>
 <body>
 	<nav class="fixed" id="nav">
