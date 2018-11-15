@@ -42,11 +42,11 @@ def projects_id(projectname):
     elif (projectname == "MSH"):
         desP = ["MySocialHub"]
         detail = ["A developer at MySocialHub, my primary job was frontend development for several sites including the famous salomondrin.com. These sites were all centered around one central platform, which primarily used the Laravel framework."]
-        return render_template("project.html", name=projectname, titles=desP)
+        return render_template("project.html", name=projectname, titles=desP, details=detail)
     elif (projectname == "Grabify"):
         desP = ["Grabify"]
         detail = ["One of the most important sites I've worked on, Grabify is a security utility that allows one to log the IPs of others through the simple click of a link."]
-        return render_template("project.html", name=projectname, titles=desP)
+        return render_template("project.html", name=projectname, titles=desP, details=detail)
 
 if __name__ == '__main__':
     app.run(debug=True)

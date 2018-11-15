@@ -5,16 +5,19 @@
 .round {
   border-radius: 15px; }
 
-  .projects-main-section .row {
-    margin: 0 !important;
-    font-family: 'Work Sans'; }
-    .projects-main-section .row h1 {
-      font-size: 6vw !important; }
-      .projects-main-section .row h1 a {
-        color: #fff; }
-    .projects-main-section .row h1:hover {
-      animation: pulse 1s;
-      -webkit-animation: pulse 1s; }
+  .project .row {
+    margin: 0px 15px; }
+
+.projects-main-section .row {
+  margin: 0 !important;
+  font-family: 'Work Sans'; }
+  .projects-main-section .row h1 {
+    font-size: 6vw !important; }
+    .projects-main-section .row h1 a {
+      color: #fff; }
+  .projects-main-section .row h1:hover {
+    animation: pulse 1s;
+    -webkit-animation: pulse 1s; }
 
 .tg td, .tg th {
   font-family: Arial, sans-serif;
