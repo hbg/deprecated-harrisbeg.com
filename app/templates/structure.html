@@ -5,6 +5,11 @@
 	  	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<meta name="description" content="{{ description }}"/>
+			<meta property="og:site_name" content="Harris Beg's Portfolio"/>
+			<meta property="og:title" content="{{ name }}"/>
+			<meta property="og:description" content = "{{ description }}"/>
+			<meta property="og:type" content="portfolio"/>
+			<meta property="og:image" content="{{ url_for('static', filename='assets/android-chrome-512x512.png') }}">
 		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		  <link href="{{ url_for('static', filename='css/materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
 		  <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet" />
