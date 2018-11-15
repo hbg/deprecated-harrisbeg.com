@@ -9,6 +9,7 @@ $(document).on('ready', function() {
 
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
+
 	if (hr < 12) {
 		/**
 		 *	background: #8E2DE2;
@@ -17,9 +18,9 @@ $(document).on('ready', function() {
 		**/
 		$('body').css("background","-webkit-linear-gradient(to right, #ff5f6d, #ffc371)");
 		$('body').css("background","linear-gradient(to right, #ff5f6d, #ffc371)");
-		color('#ffd000');
 		$('html').css("background","-webkit-linear-gradient(to right, #ff5f6d, #ffc371)");
 		$('html').css("background","linear-gradient(to right, #ff5f6d, #ffc371)");
+		color('#ffd000');
 
 	}
 	else if (hr >= 12 && hr < 19) {
@@ -30,23 +31,27 @@ $(document).on('ready', function() {
 
 		$('html').css("background","linear-gradient(to right, #36d1dc, #5b86e5)");
 		color('#00d8ff');
+
 	}
 	else {
 		$('body').css("background","-webkit-linear-gradient(to right, #6441a5, #2a0845)");
-
 		$('body').css("background","linear-gradient(to right, #6441a5, #2a0845)");
-		color('#6441a5');
 		$('html').css("background","-webkit-linear-gradient(to right, #6441a5, #2a0845)");
-
 		$('html').css("background","linear-gradient(to right, #6441a5, #2a0845)");
+		color('#6441a5');
+
 	}
 	$('.sidenav').sidenav();
 	$('.tooltipped').tooltip();
-
 });
+
 
 function color(c) {
     var theme = document.querySelector("meta[name=theme-color]");
     theme.setAttribute("content", c);
+		elements = document.getElementsByClassName("theme-color");
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].style.color=c;
 
+		}
 }

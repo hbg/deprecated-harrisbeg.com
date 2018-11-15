@@ -1,0 +1,11 @@
+{% extends "structure.html" %}
+{% block content %}
+  <div class="big">
+    {% for item in titles %}
+      <div class="row white round">
+          <h1 class="theme-color">{{ item }}</h1>
+          <p class="center theme-color">{{ details[loop.index-1]}}</p>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

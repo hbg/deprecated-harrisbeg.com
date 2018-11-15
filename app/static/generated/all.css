@@ -1,0 +1,214 @@
+
+
+
+
+.round {
+  border-radius: 15px; }
+
+  .projects-main-section .row {
+    margin: 0 !important;
+    font-family: 'Work Sans'; }
+    .projects-main-section .row h1 {
+      font-size: 6vw !important; }
+      .projects-main-section .row h1 a {
+        color: #fff; }
+    .projects-main-section .row h1:hover {
+      animation: pulse 1s;
+      -webkit-animation: pulse 1s; }
+
+.tg td, .tg th {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 0;
+  overflow: hidden;
+  word-break: normal;
+  border-color: none; }
+
+  .center-margin, .tg, .tg th {
+    margin: 0 auto; }
+
+    #txt-nm-div, .mdiv {
+      left: 50%;
+      transform: translate(-50%, -50%); }
+
+      body, html {
+        background: #f12711;
+        background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+        background: linear-gradient(to right, #f5af19, #f12711);
+        max-width: 100%;
+        overflow-x: hidden; }
+
+        h1 {
+          text-align: center; }
+
+          .tg .tg-0lax, .tg .tg-s268 {
+            text-align: left; }
+
+            .page-footer {
+              background: #000134 !important; }
+
+              .footer-copyright {
+                background: #000023 !important; }
+
+                body {
+                  display: flex;
+                  min-height: 100vh;
+                  flex-direction: column; }
+
+                  .tg {
+                    border-collapse: collapse;
+                    border-spacing: 0; }
+
+                    .tg th {
+                      font-weight: 400; }
+
+                      #contact-form, #nm-text {
+                        font-family: 'Work Sans'; }
+
+                        .tg .tg-0lax {
+                          vertical-align: top; }
+
+                          #contact-form, #nm-text, .center-text, .section-icon {
+                            text-align: center; }
+
+                            .companies {
+                              height: 22%; }
+
+                              .company {
+                                height: 100%; }
+
+                                .height-row-adj {
+                                  width: 100%;
+                                  display: block;
+                                  margin: 0 auto; }
+
+                                  .side-margin {
+                                    margin-left: 8% !important;
+                                    margin-right: 8% !important;
+                                    max-width: 84%; }
+
+                                    .mdiv {
+                                      position: absolute;
+                                      top: 50%; }
+
+                                      @media screen and (min-width:991px) {
+                                        .companies {
+                                          width: 66%;   }
+}
+
+@media screen and (max-width:990px) {
+  .div-2 {
+    margin-top: 600px;   }
+    tbody .main {
+      width: 100vw;   }
+      tr {
+        padding: 0;   }
+        .roll-cell {
+          width: 80vw;
+          margin-left: 10vw !important;   }
+}
+
+@media screen and (max-width:650px) {
+  .pji {
+    font-size: 5vw;   }
+}
+
+@media screen and (min-width:651px) {
+  .pji {
+    font-size: 3vw;   }
+}
+
+#contact-form {
+  margin-left: 10vw;
+  width: 80vw;
+  color: #fff; }
+
+  .big-boy-icons {
+    font-size: 25px; }
+
+    .big {
+      width: 100%;
+      height: auto;
+      min-height: 200px; }
+
+      .section-icon {
+        margin: 0 auto;
+        font-size: 8rem; }
+
+        .scrollable {
+          position: relative;
+          width: 100%;
+          height: 100vh; }
+
+          .logo {
+            height: 100px;
+            width: 100px; }
+
+            .center-text {
+              width: 100%; }
+
+              #txt-nm-div {
+                width: 100%;
+                position: absolute;
+                color: #fff;
+                top: 70%; }
+
+                tr {
+                  padding: 0 !important; }
+
+                  .header-text {
+                    font-family: 'Titillium Web';
+                    margin-left: 10%;
+                    margin-right: 10%; }
+
+                    table, td {
+                      margin: 0 auto; }
+
+                      table {
+                        width: 66%;
+                        height: 40vh; }
+
+                        td {
+                          min-width: 25%;
+                          border-radius: 20px;
+                          background: #000;
+                          font-size: 4rem;
+                          text-align: center !important; }
+
+                          .backdrop {
+                            background-color: #ff5400; }
+
+                            #nav, #nav-mobile {
+                              background: #000134; }
+
+                              h4 {
+                                font-size: 5rem; }
+
+                                .light-text {
+                                  font-family: 'Work Sans'; }
+
+                                  #nav-logo {
+                                    margin-top: 10px; }
+
+                                    #nav-mobile {
+                                      color: #fff !important; }
+
+                                      #headerItemNav {
+                                        height: 80px;
+                                        width: 100%; }
+
+                                        #nav-header {
+                                          display: block;
+                                          margin: 0 auto !important; }
+
+                                          .divider, .transparent {
+                                            background: 0 0; }
+
+                                            .divider {
+                                              width: 2% !important; }
+
+                                              .fixed {
+                                                position: fixed;
+                                                z-index: 999; }

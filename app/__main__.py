@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 assets = Environment(app)
 assets.url = app.static_url_path
-scss = Bundle('about.scss', 'contact.scss', 'projects.scss', filters='pyscss', output='all.css')
+scss = Bundle('about.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
+
 assets.register('scss_all', scss)
 
 pages = ["Home","About","Contact","Projects"]
@@ -28,6 +29,24 @@ def contact():
 @app.route('/projects/')
 def projects():
     return render_template("projects.html", name=pages[3], description=descriptions[3])
+@app.route('/projects/<projectname>')
+def projects_id(projectname):
+    if (projectname == "UCSD"):
+        desP = ["Center for Energy Research", "Cancer Center"]
+        detail = ["At the Center of Energy, I attempted to find optimal computer vision settings (with OpenCV) for detecting the sun to aid the solar panels at UCSD.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF)."]
+        return render_template("project.html", name=projectname, titles=desP, details=detail)
+    elif (projectname == "skinCAM"):
+        desP = ["skinCAM"]
+        detail = ["A child of my imagination, skinCAM, a patent-pending app, was created to allow for public access to dermatologic resources. By utilizing machine learning, skinCAM accurately detects many skin diseases - all for the price of, well, nil."]
+        return render_template("project.html", name=projectname, titles=desP, details=detail)
+    elif (projectname == "MSH"):
+        desP = ["MySocialHub"]
+        detail = ["A developer at MySocialHub, my primary job was frontend development for several sites including the famous salomondrin.com. These sites were all centered around one central platform, which primarily used the Laravel framework."]
+        return render_template("project.html", name=projectname, titles=desP)
+    elif (projectname == "Grabify"):
+        desP = ["Grabify"]
+        detail = ["One of the most important sites I've worked on, Grabify is a security utility that allows one to log the IPs of others through the simple click of a link."]
+        return render_template("project.html", name=projectname, titles=desP)
 
 if __name__ == '__main__':
     app.run(debug=True)
