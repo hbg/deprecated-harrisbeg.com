@@ -1,9 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_assets import Environment, Bundle
-
+import pyrebase
 import datetime
-
+import json
 app = Flask(__name__)
+config = {
+    "apiKey": "AIzaSyBilGD_-PomwT-XY1D6GlgQhs2rA-xX0uI",
+    "authDomain": "adminblog-9d1b0.firebaseapp.com",
+    "databaseURL": "https://adminblog-9d1b0.firebaseio.com",
+    "projectId": "adminblog-9d1b0",
+    "storageBucket": ""
+  }
+firebase = pyrebase.initialize_app(config)
 
 assets = Environment(app)
 assets.url = app.static_url_path
@@ -29,6 +37,12 @@ def contact():
 @app.route('/projects/')
 def projects():
     return render_template("projects.html", name=pages[3], description=descriptions[3])
+@app.route('/admin/')
+def admin():
+    return render_template("admin.html")
+@app.route('/login', methods=['POST'])
+def login():
+        return("Success")
 @app.route('/projects/<projectname>')
 def projects_id(projectname):
     if (projectname == "UCSD"):

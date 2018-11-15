@@ -225,3 +225,10 @@ body.rip-image {
                                               .fixed {
                                                 position: fixed;
                                                 z-index: 999; }
+
+                                                #login-form {
+                                                  width: 80%;
+                                                  margin-left: 10%; }
+                                                  #login-form .input-field {
+                                                    background: white;
+                                                    border-radius: 10px; }
