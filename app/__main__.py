@@ -1,18 +1,33 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect,url_for
 from flask_assets import Environment, Bundle
 import datetime
+import requests
 import json
 app = Flask(__name__)
-
+service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
+apiKey = "AIzaSyBilGD_-PomwT-XY1D6GlgQhs2rA-xX0uI"
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
-
+token = ""
 assets.register('scss_all', scss)
 
 pages = ["Home","About","Contact","Projects"]
 descriptions = ["A developer with no bounds, I have explored many languages and APIs, roamed through different jobs, and attempted to solve things myself for hours on end.", "About","Contact","Projects"]
-
+def ulogin(em, pw):
+    url = "%s?key=%s" % (service, apiKey)
+    data = {"email": em,
+            "password": pw,
+            "returnSecureToken": True}
+    result = requests.post(url, json=data)
+    is_login_successful = result.ok
+    json_result = result.json()
+    token = json_result["idToken"][:9]
+    print(token)
+    if (("INVALID_PASSWORD") not in str(json_result)): # Crappy system but it'll do
+        return json_result
+    else:
+        return "Error"
 @app.route('/')
 def home():
     return render_template("index.html", name=pages[0], description=descriptions[0])
@@ -31,9 +46,21 @@ def projects():
 @app.route('/admin/')
 def admin():
     return render_template("admin.html")
+
+@app.route('/adminpanel/')
+def adminpanel():
+    email = request.args.get('email')
+    id = request.args.get('id')
+    return render_template("adminpanel.html", email=email, id=id)
+
 @app.route('/login', methods=['POST'])
 def login():
-        return("Success")
+        yx = ulogin(request.form['email'], request.form['password'])
+        if (yx != "Error"):
+            return redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9])
+        else:
+            return "nil"
+
 
 @app.route('/projects/<projectname>')
 def projects_id(projectname):

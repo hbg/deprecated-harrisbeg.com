@@ -232,3 +232,7 @@ body.rip-image {
                                                   #login-form .input-field {
                                                     background: white;
                                                     border-radius: 10px; }
+                                                    #login-form .input-field input {
+                                                      border-bottom: none !important; }
+                                                      #login-form .input-field label {
+                                                        display: none; }

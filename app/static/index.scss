@@ -5,5 +5,11 @@
   .input-field {
     background: white;
     border-radius: 10px;
+    input {
+      border-bottom: none !important;
+    }
+    label {
+      display: none;
+    }
   }
 }
