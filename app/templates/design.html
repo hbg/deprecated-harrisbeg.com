@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="design">
 <head>
 	<title>Harris Beg | {{name}}</title>
 	  	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -27,62 +27,79 @@
 		  <script defer="defer" src="{{ url_for('static', filename='js/particles.js') }}"></script>
 		  <script defer="defer" src="{{ url_for('static', filename='js/rellax.js') }}"></script>
 			<meta name="google-site-verification" content="M4NtSw5eYme7UjF2FoelaDL4-oc5n9nMtQPrGICANcc" />
+      <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 				<meta name="theme-color" content="#000134">
 
 
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
-			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 			{% assets "scss_all" %}
 			        <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
 			{% endassets %}
 </head>
-<body>
-	<nav class="fixed" id="nav">
-		<div class="nav-wrapper container">
-      <a href="{{url_for('home')}}">
-				<img id="nav-logo" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="40" height="40">
-			</a>
+  <body>
+    <nav class="fixed" id="nav">
+  		<div class="nav-wrapper container">
+        <a href="{{url_for('home')}}">
+  				<img id="nav-logo" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="40" height="40">
+  			</a>
 
 
-      <ul id="nav-mobile" class="sidenav">
-				<li id="headerItemNav"><a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
+        <ul id="nav-mobile" class="sidenav">
+  				<li id="headerItemNav"><a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
 
-        <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
-        <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
-				<li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
-				<li><a href="{{url_for('design')}}" class="white-text">Design</a></li>
-				<li>
-						<a><i class="fab fa-linkedin white-text" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
-						<a href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square white-text"></i></a>
-						<a><i class="fab fa-twitter-square white-text" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
-				</li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
+          <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
+          <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
+  				<li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
+  				<li><a href="{{url_for('design')}}" class="white-text">Design</a></li>
+  				<li>
+  						<a><i class="fab fa-linkedin white-text" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
+  						<a href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square white-text"></i></a>
+  						<a><i class="fab fa-twitter-square white-text" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
+  				</li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
+      </div>
+  	</nav>
+    <div class="scrollable">
+  	<div class="mdiv">
+  		<img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>
+  	</div>
+  	<div id="txt-nm-div">
+  		<h3 id="nm-text" class="animated fadeInUp">DESIGN
+  		</h3>
+
+
+  	</div>
+  </div>
+
+  <div class="big">
+    {% for item in works %}
+        <div class="row flexible">
+          <div class="col s6 white card animation-target">
+
+
+            <div class="card-content">
+              <h2>
+                {{works[loop.index-1]}}
+                </h2>
+                <p class="flow-text">
+                  {{workdescriptions[loop.index-1]}}
+                  </p>
+              </div>
+            </div>
+
+          <div class="col s6 transparent card">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename='assets/designs/designs'+(loop.index)|string+'.png') }}" class="design-image z-depth-2" height="150"/>
+              </div>
+        </div>
+        </div>
+
+
+
+    {% endfor %}
     </div>
-	</nav>
-	<div class="scrollable">
-	<div class="mdiv">
-		<img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>
-	</div>
-	<div id="txt-nm-div">
-		<h3 id="nm-text" class="animated fadeInUp">HARRIS BEG
-			{% if (name !="Home") %}
-			| {{name.upper()}}
-			{% endif %}
-		</h3>
-	</div>
-</div>
-      {% block content %}
-      {% endblock %}
-			{% extends "footer.html" %}
-			<style type="text/css">
-					@font-face {
-					font-family: trial;
-					src: url("{{ url_for('static', filename='Nexa_Free_Bold-webfont.woff') }}") format('woff');
-					font-weight:bold; }
-			</style>
-
-</body>
+  </body>
 </html>

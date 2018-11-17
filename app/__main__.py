@@ -8,12 +8,32 @@ service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPass
 apiKey = "AIzaSyBilGD_-PomwT-XY1D6GlgQhs2rA-xX0uI"
 assets = Environment(app)
 assets.url = app.static_url_path
-scss = Bundle('about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
+scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 token = ""
+jsonMD = {
+        "design": {
+            "titles": ["App Dev","TechnologiCoders","Linker","Mustafar","Royal Guard","Hypercharged"],
+            "workdescriptions": ["The logo for the App Development club was conceived by me after thinking of how to combine the CCA Spirit colors, the symbol of the raven, and imagery that very clearly depicts the purpose of the club.", "While the primary objective of TechnologiCoders was to primarily focus on hardware, creating a website with a logo enforcing an image of creativity would likely attract more sponsors.", "An impromptu creation, 'Linker' was an app designed to link mobile phones to computers - a link very clearly seen in the logo itself.", "A planet in Star Wars hosting Darth Vader's own castle.","A royal guard from the Star Wars original trilogy.","Just like our content and quality, the Hypercharged logo is straight to the point and direct - both in styling and meaning."]
+
+        },
+        "Home": {
+            "description": "A developer with no bounds, I have explored many languages and APIs, roamed through different jobs, and attempted to solve things myself for hours on end."
+        },
+        "About": {
+            "description" : "About"
+        },
+        "Design": {
+            "description" : "Design"
+        },
+        "Projects": {
+            "description" : "Projects"
+        }
+        }
 assets.register('scss_all', scss)
 
-pages = ["Home","About","Contact","Projects"]
-descriptions = ["A developer with no bounds, I have explored many languages and APIs, roamed through different jobs, and attempted to solve things myself for hours on end.", "About","Contact","Projects"]
+
+works = jsonMD["design"]['titles']
+workdescriptions = jsonMD["design"]["workdescriptions"]
 def ulogin(em, pw):
     url = "%s?key=%s" % (service, apiKey)
     data = {"email": em,
@@ -30,19 +50,19 @@ def ulogin(em, pw):
         return "Error"
 @app.route('/')
 def home():
-    return render_template("index.html", name=pages[0], description=descriptions[0])
+    return render_template("index.html", name="Home", description=jsonMD["Home"]["description"])
 
 @app.route('/about/')
 def about():
-    return render_template("about.html", name=pages[1], description=descriptions[1])
+    return render_template("about.html", name="About", description=jsonMD["About"]["description"])
 
-@app.route('/contact/')
-def contact():
-    return render_template("contact.html", name=pages[2], description=descriptions[2])
+@app.route('/design/')
+def design():
+    return render_template("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
 
 @app.route('/projects/')
 def projects():
-    return render_template("projects.html", name=pages[3], description=descriptions[3])
+    return render_template("projects.html", name="Projects", description=jsonMD["Projects"]["description"])
 @app.route('/admin/')
 def admin():
     return render_template("admin.html")
