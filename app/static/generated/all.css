@@ -231,8 +231,16 @@ body.rip-image {
                                                   margin-left: 10%; }
                                                   #login-form .input-field {
                                                     background: white;
-                                                    border-radius: 10px; }
+                                                    border-radius: 10px;
+                                                    font-family: trial !important; }
                                                     #login-form .input-field input {
                                                       border-bottom: none !important; }
                                                       #login-form .input-field label {
                                                         display: none; }
+
+html {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
