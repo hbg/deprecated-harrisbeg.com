@@ -26,7 +26,19 @@
 			        <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
 			{% endassets %}
 </head>
-  <body>
-			<h1 class="white-text left">Token: {{id}}<br/>Email: {{email}}</h1>
-
+  <body id="loginFormBody">
+			<h1 class="white-text left ultralight">Welcome</h1>
+			<div class="row" id="add-post">
+				<div class="col s12">
+					<div class="card">
+						<form id="post-form" action="{{ url_for('postMessage') }}" method="post">
+						<div class="card content blackandblue">
+						<i class="fas fa-plus-circle white-text small"></i>
+						<textarea id="new-post" name="messagePost" class="white-text" placeholder="Enter text here..." value=""></textarea>
+						<br/>
+						<input id="post-submit" class="btn waves-effect waves-small white white-text" type="submit"></input>
+					</div>
+					</div>
+				</div>
+			</div>
 </html>

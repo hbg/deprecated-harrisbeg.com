@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect,url_for
+from flask import Flask, render_template, request, redirect,url_for, make_response
 from flask_assets import Environment, Bundle
 import datetime
 import requests
@@ -6,6 +6,7 @@ import json
 app = Flask(__name__)
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 apiKey = "AIzaSyBilGD_-PomwT-XY1D6GlgQhs2rA-xX0uI"
+app.config['SECRET_KEY'] = 'asdafyugefyewr632123wd42a'
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
@@ -56,6 +57,11 @@ def home():
 def about():
     return render_template("about.html", name="About", description=jsonMD["About"]["description"])
 
+@app.route('/postMessage/', methods=['POST'])
+def postMessage():
+
+    return request.form['messagePost']
+
 @app.route('/design/')
 def design():
     return render_template("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
@@ -77,7 +83,10 @@ def adminpanel():
 def login():
         yx = ulogin(request.form['email'], request.form['password'])
         if (yx != "Error"):
-            return redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9])
+
+            req= make_response(redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9]))
+            #req.set_cookie('active', True)
+            return req
         else:
             return "nil"
 
@@ -104,6 +113,7 @@ def projects_id(projectname):
 @app.errorhandler(404)
 def pagenotfound(e):
     return render_template("404.html", name="404", description="There's nothing to see here.")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

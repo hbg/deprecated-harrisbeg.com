@@ -18,16 +18,16 @@
 			<meta name="msapplication-TileColor" content="#da532c">
 		  <script defer="defer" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
 			<meta name="theme-color" content="#000134">
-			
+
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
 			{% assets "scss_all" %}
 			        <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
 			{% endassets %}
 </head>
-  <body>
+  <body id="loginFormBody">
     <form class="col s12" id="login-form" action="{{ url_for('login') }}" method="post">
-			<h1 class="white-text left">Login</h1>
+			<h1 class="white-text left">LOGIN</h1>
 			<div class="row">
           <div class="input-field col s12">
             <input name="email" type="email" class="validate">
