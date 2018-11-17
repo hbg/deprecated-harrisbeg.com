@@ -15,7 +15,10 @@
       margin-bottom: 15px;
       display: block;
       min-height: 100%;
-      max-height: 100%; }
+      max-height: 100%;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none; }
       .design body .card {
         height: 100%; }
         @media screen and (max-width: 800px) {
@@ -453,7 +456,10 @@ body.rip-image {
                                           margin: 0 auto !important; }
 
                                           .divider, .transparent {
-                                            background: 0 0; }
+                                            background: 0 0;
+                                            box-shadow: none;
+                                            -moz-box-shadow: none;
+                                            -webkit-box-shadow: none; }
 
                                             .divider {
                                               width: 2% !important; }
@@ -494,21 +500,28 @@ body.rip-image {
     font-family: 'Work Sans';
     font-weight: lighter; }
 
-    #login-form {
-      width: 80%;
-      margin-left: 10%; }
-      #login-form h1 {
-        font-family: 'Work Sans';
-        font-weight: lighter; }
-        #login-form .input-field {
-          background: white;
-          border-radius: 10px; }
-          #login-form .input-field input {
-            border-bottom: none !important;
+    .light {
+      font-family: 'Work Sans';
+      font-weight: light; }
+
+      #projectTitle {
+        font-size: 2.7rem; }
+
+        #login-form {
+          width: 80%;
+          margin-left: 10%; }
+          #login-form h1 {
             font-family: 'Work Sans';
-            font-weight: light; }
-            #login-form .input-field label {
-              display: none; }
+            font-weight: lighter; }
+            #login-form .input-field {
+              background: white;
+              border-radius: 10px; }
+              #login-form .input-field input {
+                border-bottom: none !important;
+                font-family: 'Work Sans';
+                font-weight: light; }
+                #login-form .input-field label {
+                  display: none; }
 
 html {
   -moz-user-select: -moz-none;

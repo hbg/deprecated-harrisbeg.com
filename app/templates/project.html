@@ -3,9 +3,15 @@
 <div class="big project">
 
     {% for item in titles %}
-      <div class="row white round">
-          <h1 class="theme-color">{{ item }}</h1>
-          <p class="center theme-color">{{ details[loop.index-1]}}</p>
+      <div class="row blackandblue round">
+        <div class="col s3">
+          <img src="{{ url_for('static', filename='assets/'+images[loop.index-1]) }}" width="70%" style="margin: 15%"/>
+
+          </div>
+        <div class="col s9">
+            <h1 class="theme-color ultralight left" id="projectTitle">{{ item.upper() }}</h1>
+            <p class="theme-color light left">{{ details[loop.index-1]}}</p>
+            </div>
         </div>
     {% endfor %}
   </div>
