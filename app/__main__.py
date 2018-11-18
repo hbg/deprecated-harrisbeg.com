@@ -67,7 +67,7 @@ def ulogin(em, pw):
 def home():
     return render_template("index.html", name="Home", description=jsonMD["Home"]["description"])
 
-@app.route('/about/')
+@app.route('/about/',subdomain='about')
 def about():
     return render_template("about.html", name="About", description=jsonMD["About"]["description"])
 

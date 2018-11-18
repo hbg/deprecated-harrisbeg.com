@@ -57,5 +57,4 @@ function color(c) {
 
 		}
 
-		theme.setAttribute("content", "#000134");
 }
