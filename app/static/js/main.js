@@ -1,3 +1,4 @@
+
 $(document).on('ready', function() {
 	new WOW({
 		                      boxClass:     'wow',      // default
@@ -46,12 +47,15 @@ $(document).on('ready', function() {
 });
 
 
+
 function color(c) {
     var theme = document.querySelector("meta[name=theme-color]");
-    theme.setAttribute("content", c);
+    //	theme.setAttribute("content", c);
 		elements = document.getElementsByClassName("theme-color");
 		for (var i = 0; i < elements.length; i++) {
 			elements[i].style.color=c;
 
 		}
+
+		theme.setAttribute("content", "#000134");
 }
