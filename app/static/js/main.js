@@ -49,7 +49,7 @@ $(document).on('ready', function() {
 
 
 function color(c) {
-    var theme = document.querySelector("meta[name=theme-color]");
+    //	var theme = document.querySelector("meta[name=theme-color]");
     //	theme.setAttribute("content", c);
 		elements = document.getElementsByClassName("theme-color");
 		for (var i = 0; i < elements.length; i++) {
