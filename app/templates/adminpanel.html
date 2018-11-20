@@ -23,7 +23,7 @@
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
 			{% assets "scss_all" %}
-			        <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
+					<link rel="stylesheet" href="{{ url_for('static', filename='generated/all.css') }}" type="text/css" />
 			{% endassets %}
 </head>
   <body id="loginFormBody">

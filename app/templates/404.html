@@ -11,7 +11,7 @@
         <meta property="og:description" content = "{{ description }}"/>
         <meta property="og:type" content="portfolio"/>
         {% assets "scss_all" %}
-  			        <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
+          <link rel="stylesheet" href="{{ url_for('static', filename='generated/all.css') }}" type="text/css" />
   			{% endassets %}
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet"/>
   </head>
