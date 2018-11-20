@@ -124,11 +124,11 @@ def projects_id(projectname):
         desP = ["Grabify"]
         detail = ["One of the most important sites I've worked on, Grabify is a security utility that allows one to log the IPs of others through the simple click of a link."]
         return render_template("project.html", name=projectname, titles=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
-
+"""
 @app.errorhandler(404)
 def pagenotfound(e):
     return render_template("404.html", name="404", description="There's nothing to see here.")
-
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)
