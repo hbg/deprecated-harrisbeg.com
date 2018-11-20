@@ -48,7 +48,6 @@ jsonMD = {
         }
         }
 
-
 works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
 def ulogin(em, pw):
