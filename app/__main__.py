@@ -24,7 +24,7 @@ client = MongoClient(
     'mongodb://{user}:{password}@{host}:'
     '{port}/{namespace}'.format(**mongoSettings)
 )
-db = conn.blog
+db = conn.blogsite
 token = ""
 jsonMD = {
         "design": {
@@ -87,11 +87,12 @@ def about():
 @app.route('/postMessage/', methods=['POST'])
 def postMessage():
 
-    db.insert(request.form['messagePost'])
+    db.blog.insert(request.form['messagePost'])
+    return "Posted"
 
 @app.route('/design/')
 def design():
-    return render_template("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
+    return render_temxplate("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
 
 @app.route('/projects/')
 def projects():
