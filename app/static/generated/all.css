@@ -495,6 +495,11 @@ body.rip-image {
                                                       margin-right: 5%;
                                                       border: none;
                                                       height: 250px; }
+                                                      #loginFormBody #new-title {
+                                                        width: 90%;
+                                                        margin-left: 5%;
+                                                        margin-right: 5%;
+                                                        border: none; }
 
 .blackandblue {
   background: #000134 !important; }

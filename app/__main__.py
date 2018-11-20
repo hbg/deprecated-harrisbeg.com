@@ -22,7 +22,7 @@ scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.s
 assets.register('scss_all', scss)
 
 
-token = ""
+token, email = "",""
 jsonMD = {
         "design": {
             "titles": ["App Dev","TechnologiCoders","Linker","Mustafar","Royal Guard","Hypercharged"],
@@ -86,11 +86,12 @@ def postMessage():
 
     # data to save
     data = {
-        "message": request.form['messagePost']
+        "message": request.form['messagePost'],
+        "date": datetime.datetime.utcnow()
     }
 
     # Pass the user's idToken to the push method
-    results = db.push(data, token)
+    results = db.child(request.form['titlePost']).push(data, token)
     #   db.blog.insert(request.form['messagePost'])
     return "Posted"
 
