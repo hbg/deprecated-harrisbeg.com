@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect,url_for, make_response
 from flask_assets import Environment, Bundle
+from pymongo import MongoClient
 import datetime
 import requests
 import json
@@ -11,7 +12,19 @@ assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 assets.register('scss_all', scss)
+mongoSettings = {
+                "user": os.environ.get('userMongo', None),
+                "password": os.environ.get('pwMongo', None),
+                "host": os.environ.get('hostMongo', None),
+                "port": int(os.environ.get('portMongo', None)),
+                "namespace": "blogsite"
 
+}
+client = MongoClient(
+    'mongodb://{user}:{password}@{host}:'
+    '{port}/{namespace}'.format(**mongoSettings)
+)
+db = conn.blog
 token = ""
 jsonMD = {
         "design": {
@@ -74,7 +87,7 @@ def about():
 @app.route('/postMessage/', methods=['POST'])
 def postMessage():
 
-    return request.form['messagePost']
+    db.insert(request.form['messagePost'])
 
 @app.route('/design/')
 def design():
