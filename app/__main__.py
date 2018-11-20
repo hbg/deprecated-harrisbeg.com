@@ -6,7 +6,7 @@ import json
 import os
 app = Flask(__name__)
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
-apiKey = os.environ.get('apiKey', None)
+apiKey = os.environ.get('APIKey', None)
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
