@@ -8,6 +8,7 @@ app = Flask(__name__)
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 #apiKey = os.popen('heroku config:get APIKey').read()
 app.config['SERVER_NAME'] = 'harris.com:5000'
+app.config['SECRET_KEY'] = "randomRavenKey123"
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
