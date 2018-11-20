@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect,url_for, make_response
 from flask_assets import Environment, Bundle
-from pymongo import MongoClient
+import pyrebase
 import datetime
 import requests
 import json
@@ -8,23 +8,20 @@ import os
 app = Flask(__name__)
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 apiKey = os.environ.get('APIKey', None)
+config = {
+  "apiKey": apiKey,
+  "authDomain": "adminhbeg.firebaseapp.com",
+  "databaseURL": os.environ.get('databaseURL', None),
+  "storageBucket": os.environ.get('storageBucket', None)
+}
+
+firebase = pyrebase.initialize_app(config)
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 assets.register('scss_all', scss)
-mongoSettings = {
-                "user": os.environ.get('userMongo', None),
-                "password": os.environ.get('pwMongo', None),
-                "host": os.environ.get('hostMongo', None),
-                "port": int(os.environ.get('portMongo', None)),
-                "namespace": "blogsite"
 
-}
-client = MongoClient(
-    'mongodb://{user}:{password}@{host}:'
-    '{port}/{namespace}'.format(**mongoSettings)
-)
-db = conn.blogsite
+
 token = ""
 jsonMD = {
         "design": {
@@ -71,7 +68,6 @@ def ulogin(em, pw):
     is_login_successful = result.ok
     json_result = result.json()
 
-    print(token)
     if (("INVALID_PASSWORD") not in str(json_result)): # Crappy system but it'll do
         return json_result
     else:
@@ -86,8 +82,16 @@ def about():
 
 @app.route('/postMessage/', methods=['POST'])
 def postMessage():
+    db = firebase.database()
 
-    db.blog.insert(request.form['messagePost'])
+    # data to save
+    data = {
+        "message": request.form['messagePost']
+    }
+
+    # Pass the user's idToken to the push method
+    results = db.push(data, token)
+    #   db.blog.insert(request.form['messagePost'])
     return "Posted"
 
 @app.route('/design/')
@@ -113,6 +117,7 @@ def login():
         if (yx != "Error"):
 
             req= make_response(redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9]))
+            token = yx["idToken"]
             #req.set_cookie('active', True)
             return req
         else:
