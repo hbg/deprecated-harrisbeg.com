@@ -3,11 +3,14 @@ from flask_assets import Environment, Bundle
 import datetime
 import requests
 import json
+import os
 app = Flask(__name__)
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
+assets.register('scss_all', scss)
+
 token = ""
 jsonMD = {
         "design": {
@@ -42,7 +45,6 @@ jsonMD = {
             }
         }
         }
-assets.register('scss_all', scss)
 
 
 works = jsonMD["design"]['titles']
@@ -55,7 +57,7 @@ def ulogin(em, pw):
     result = requests.post(url, json=data)
     is_login_successful = result.ok
     json_result = result.json()
-    token = json_result["idToken"][:9]
+
     print(token)
     if (("INVALID_PASSWORD") not in str(json_result)): # Crappy system but it'll do
         return json_result
