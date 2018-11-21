@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html class="design">
+<html ⚡ class="design">
 <head>
 	<title>Harris Beg | {{name}}</title>
-	  	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+	  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<script async src="https://cdn.ampproject.org/v0.js"></script>
+			<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+			</style></noscript>
 		  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<meta name="description" content="{{ description }}"/>
 			<meta property="og:site_name" content="Harris Beg's Portfolio"/>
 			<meta property="og:title" content="{{ name }}"/>
 			<meta property="og:description" content = "{{ description }}"/>
 			<meta property="og:type" content="portfolio"/>
+			<script type="application/ld+json">
+      {
+        "@context": "https://www.harrisbeg.com",
+        "@type": "Portfolio",
+        "headline": "Harris Beg's official portfolio website.",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          {{ url_for('static', filename='assets/android-chrome-512x512.png') }}
+        ]
+      }
+    </script>
 			<meta name="keywords" content="Harris Beg,Harris,Beg,HarrisBeg,shadowcypher,Shadow Cypher,Developer,TechnologiCoders,UCSD,Grabify" />
 			<meta property="og:image" content="{{ url_for('static', filename='assets/android-chrome-512x512.png') }}">
 		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -42,7 +57,7 @@
     <nav class="fixed" id="nav">
   		<div class="nav-wrapper container">
         <a href="{{url_for('home')}}">
-  				<img id="nav-logo" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="40" height="40">
+					<img id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
   			</a>
 
 
