@@ -97,7 +97,7 @@ def postMessage():
 
 @app.route('/design/')
 def design():
-    return render_temxplate("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
+    return render_template("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
 
 @app.route('/projects/')
 def projects():
