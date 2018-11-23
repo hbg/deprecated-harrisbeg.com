@@ -8,12 +8,14 @@
   background-color: white;
   min-width: 200px !important;
   margin: 10px;
+  border-radius: 15px;
 }
 .blogs {
   min-width: 100% !important;
   min-height: 200px !important;
   display: flex;
   overflow-x: auto;
+  margin: 0px !important;
 
 }
 #loginFormBody {

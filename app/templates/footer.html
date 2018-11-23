@@ -1,12 +1,12 @@
 <section class="card blogs blackandblue" id="blogs">
-  {% for title in titles %}
+  {% for title in titles | reverse %}
   <div class="card--content black-text center modal-trigger" href="#{{strippedtitles[loop.index-1]}}" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[loop.index-1]}}" data-date="{{dates[loop.index-1]}}">
-    <h3>{{title}}</h3>
+    <h3>{{title | truncate(10)}}</h3>
     <p>
-      {{messages[loop.index-1]}}
+      {{messages[titles|length - loop.index] | truncate(30)}}
       </p>
       <h6>
-        {{dates[loop.index-1]}}
+        {{dates[titles|length - loop.index]}}
         </h6>
 
     </div>

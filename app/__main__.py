@@ -69,6 +69,8 @@ jsonMD = {
 
 works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
+firebase = pyrebase.initialize_app(config)
+db = firebase.database()
 
 def ulogin(em, pw):
     url = "%s?key=%s" % (service, config["apiKey"])
@@ -111,7 +113,7 @@ def postMessage():
     data = {
 
         "message": request.form['messagePost'],
-        "date": datetime.now(timezone.utc).strftime("%m/%d, %Y"),
+        "date": datetime.now(timezone.utc).strftime("%m/%d/%Y"),
         "author": "Harris Beg"  #   will change later
     }
 
@@ -119,7 +121,7 @@ def postMessage():
     results = db.child("blogs").child(request.form['titlePost']).set(data, token)
     #   db.blog.insert(request.form['messagePost'])
 
-    return("Printed")
+    return redirect("/#blogs")
 def stream_handler(message):
 
         print("Updated!")
