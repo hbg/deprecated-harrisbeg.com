@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect,url_for, make_response
 from flask_assets import Environment, Bundle
+from datetime import datetime, timezone
 import pyrebase
-import datetime
 import requests
 import json
 import os
@@ -14,13 +14,20 @@ config = {
   "databaseURL": os.environ.get('databaseURL', None),
   "storageBucket": os.environ.get('storageBucket', None)
 }
+if (apiKey == None):
+    with open(r"app/static/js/config.json") as f:
+        config = json.load(f)
+        print(str(config))
 
-firebase = pyrebase.initialize_app(config)
+
+
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 assets.register('scss_all', scss)
-
+messageBlogs = []
+dateBlogs = []
+titleBlogs = []
 
 token, email = "",""
 jsonMD = {
@@ -37,6 +44,9 @@ jsonMD = {
         },
         "Design": {
             "description" : "Design"
+        },
+        "Blog": {
+            "description" : "Blog"
         },
         "Projects": {
             "description" : "Projects",
@@ -59,8 +69,9 @@ jsonMD = {
 
 works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
+
 def ulogin(em, pw):
-    url = "%s?key=%s" % (service, apiKey)
+    url = "%s?key=%s" % (service, config["apiKey"])
     data = {"email": em,
             "password": pw,
             "returnSecureToken": True}
@@ -74,7 +85,20 @@ def ulogin(em, pw):
         return "Error"
 @app.route('/')
 def home():
-    return render_template("index.html", name="Home", description=jsonMD["Home"]["description"])
+    firebase = pyrebase.initialize_app(config)
+    db = firebase.database()
+    messageBlogs = []
+    dateBlogs = []
+    titleBlogs = []
+    titleStripped = []
+    all_blogs = db.child("blogs").get()
+    for user in all_blogs.each():
+        titleBlogs.append(user.key()) # Morty
+        titleStripped.append(''.join(filter(str.isalnum, user.key())))
+        dateBlogs.append(user.val()["date"]) # {name": "Mortimer 'Morty' Smith"}
+        messageBlogs.append(user.val()["message"])
+
+    return render_template("index.html", name="Home", description=jsonMD["Home"]["description"], titles=titleBlogs, strippedtitles=titleStripped, dates=dateBlogs, messages=messageBlogs)
 
 @app.route('/about/')
 def about():
@@ -82,18 +106,23 @@ def about():
 
 @app.route('/postMessage/', methods=['POST'])
 def postMessage():
-    db = firebase.database()
 
     # data to save
     data = {
+
         "message": request.form['messagePost'],
-        "date": datetime.datetime.utcnow()
+        "date": datetime.now(timezone.utc).strftime("%m/%d, %Y"),
+        "author": "Harris Beg"  #   will change later
     }
 
     # Pass the user's idToken to the push method
-    results = db.child(request.form['titlePost']).push(data, token)
+    results = db.child("blogs").child(request.form['titlePost']).set(data, token)
     #   db.blog.insert(request.form['messagePost'])
-    return "Posted"
+
+    return("Printed")
+def stream_handler(message):
+
+        print("Updated!")
 
 @app.route('/design/')
 def design():
@@ -115,6 +144,7 @@ def adminpanel():
 @app.route('/login', methods=['POST'])
 def login():
         yx = ulogin(request.form['email'], request.form['password'])
+        print(str(yx))
         if (yx != "Error"):
 
             req= make_response(redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9]))

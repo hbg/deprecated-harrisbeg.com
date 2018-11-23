@@ -44,8 +44,12 @@ $(document).on('ready', function() {
 	}
 	$('.sidenav').sidenav();
 	$('.tooltipped').tooltip();
+	$(".card--content").click(function() {
+		var content = '<div class="modal-content"><h1>'+$(this).attr("data-title")+'</h1><p>'+$(this).attr("data-message")+'</p></div>';
+    $('#'+$(this).attr("data-str-title")).html(content);
+    $('#'+$(this).attr("data-str-title")).modal();
+	});
 });
-
 
 
 function color(c) {

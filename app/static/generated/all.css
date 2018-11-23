@@ -471,35 +471,46 @@ body.rip-image {
                                                 .decent-padding {
                                                   padding: 20px; }
 
-                                                  #loginFormBody {
-                                                    background: #833ab4;
-                                                    background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);
-                                                    background: linear-gradient(to left, #fcb045, #fd1d1d 50%, #833ab4); }
-                                                    #loginFormBody #add-post {
-                                                      width: 80%; }
-                                                      #loginFormBody #add-post .card {
-                                                        height: 300px;
-                                                        border-radius: 30px; }
-                                                        #loginFormBody #add-post .card #post-submit {
-                                                          color: #000134;
-                                                          margin-top: 10px; }
-                                                          #loginFormBody #add-post .card textarea {
-                                                            outline: none;
-                                                            resize: none;
-                                                            -webkit-box-shadow: none;
-                                                            -moz-box-shadow: none;
-                                                            box-shadow: none; }
-                                                    #loginFormBody #new-post {
-                                                      width: 90%;
-                                                      margin-left: 5%;
-                                                      margin-right: 5%;
-                                                      border: none;
-                                                      height: 250px; }
-                                                      #loginFormBody #new-title {
-                                                        width: 90%;
-                                                        margin-left: 5%;
-                                                        margin-right: 5%;
-                                                        border: none; }
+                                                  .card--content {
+                                                    background-color: white;
+                                                    min-width: 200px !important;
+                                                    margin: 10px; }
+
+                                                    .blogs {
+                                                      min-width: 100% !important;
+                                                      min-height: 200px !important;
+                                                      display: flex;
+                                                      overflow-x: auto; }
+
+                                                      #loginFormBody {
+                                                        background: #833ab4;
+                                                        background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);
+                                                        background: linear-gradient(to left, #fcb045, #fd1d1d 50%, #833ab4); }
+                                                        #loginFormBody #add-post {
+                                                          width: 80%; }
+                                                          #loginFormBody #add-post .card {
+                                                            height: 300px;
+                                                            border-radius: 30px; }
+                                                            #loginFormBody #add-post .card #post-submit {
+                                                              color: #000134;
+                                                              margin-top: 10px; }
+                                                              #loginFormBody #add-post .card textarea {
+                                                                outline: none;
+                                                                resize: none;
+                                                                -webkit-box-shadow: none;
+                                                                -moz-box-shadow: none;
+                                                                box-shadow: none; }
+                                                        #loginFormBody #new-post {
+                                                          width: 90%;
+                                                          margin-left: 5%;
+                                                          margin-right: 5%;
+                                                          border: none;
+                                                          height: 250px; }
+                                                          #loginFormBody #new-title {
+                                                            width: 90%;
+                                                            margin-left: 5%;
+                                                            margin-right: 5%;
+                                                            border: none; }
 
 .blackandblue {
   background: #000134 !important; }

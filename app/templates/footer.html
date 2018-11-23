@@ -1,3 +1,21 @@
+<section class="card blogs blackandblue" id="blogs">
+  {% for title in titles %}
+  <div class="card--content black-text center modal-trigger" href="#{{strippedtitles[loop.index-1]}}" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[loop.index-1]}}" data-date="{{dates[loop.index-1]}}">
+    <h3>{{title}}</h3>
+    <p>
+      {{messages[loop.index-1]}}
+      </p>
+      <h6>
+        {{dates[loop.index-1]}}
+        </h6>
+
+    </div>
+    <div id="{{strippedtitles[loop.index-1]}}" class="modal"></div>
+
+  {% endfor %}
+
+</section>
+
 <footer class="page-footer">
           <div class="container">
             <div class="row">

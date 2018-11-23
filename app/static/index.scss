@@ -4,6 +4,18 @@
 .decent-padding {
   padding: 20px;
 }
+.card--content {
+  background-color: white;
+  min-width: 200px !important;
+  margin: 10px;
+}
+.blogs {
+  min-width: 100% !important;
+  min-height: 200px !important;
+  display: flex;
+  overflow-x: auto;
+
+}
 #loginFormBody {
   background: #833ab4;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
