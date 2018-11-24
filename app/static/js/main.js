@@ -49,7 +49,9 @@ $(document).on('ready', function() {
     $('#'+$(this).attr("data-str-title")).html(content);
     $('#'+$(this).attr("data-str-title")).modal();
 	});
+	
 });
+
 
 
 function color(c) {

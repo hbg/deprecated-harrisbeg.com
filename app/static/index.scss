@@ -4,11 +4,25 @@
 .decent-padding {
   padding: 20px;
 }
+.corner-big {
+  border-radius: 15px;
+
+}
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
 .card--content {
   background-color: white;
   min-width: 200px !important;
   margin: 10px;
   border-radius: 15px;
+}
+.error-msg {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Work Sans';
+  border-radius: 5px;
 }
 .blogs {
   min-width: 100% !important;
@@ -29,7 +43,7 @@
       border-radius: 30px;
       #post-submit {
         color: #000134;
-        margin-top: 10px;
+
       }
       textarea {
         outline: none;
@@ -40,12 +54,16 @@
       }
     }
   }
+  #edit-post {
+    width: 80%;
+  }
   #new-post {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
     border: none;
-    height: 250px;
+
+    height: 175px;
 
   }
   #new-title {
@@ -85,6 +103,7 @@
       border-bottom: none !important;
       font-family: 'Work Sans';
       font-weight: light;
+      margin: 0px;
     }
     label {
       display: none;

@@ -29,13 +29,17 @@
     <form class="col s12" id="login-form" action="{{ url_for('login') }}" method="post">
 			<h1 class="white-text left">LOGIN</h1>
 			<div class="row">
-          <div class="input-field col s12">
-            <input name="email" type="email" class="validate">
-            <label for="email">Email</label>
+				{% if ERRORCODE is defined %}
+					<div class="amber col s12 black-text error-msg z-depth-3">
+							<i class="fas fa-exclamation-triangle"></i>
+						{{ERRORCODE}}
+					</div>
+					{% endif %}
+          <div class="input-field col s12 z-depth-3">
+            <input name="email" type="email" class="validate" placeholder="Email">
           </div>
-        <div class="input-field col s12">
-          <input name="password" type="password" class="validate">
-          <label for="password">Password</label>
+        <div class="input-field col s12 z-depth-3">
+          <input name="password" type="password" class="validate" placeholder="Password">
         </div>
         <div class="col s12">
           <input type="submit" class="white btn waves-effect waves-light"></input>

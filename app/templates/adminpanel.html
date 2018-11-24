@@ -10,6 +10,7 @@
 		  <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet" />
 		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 		  <script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
+
 			<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/apple-touch-icon.png') }}">
 			<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/favicon-32x32.png') }}">
 			<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/favicon-16x16.png') }}">
@@ -42,4 +43,30 @@
 					</div>
 				</div>
 			</div>
+			{% for title in titles | reverse %}
+				<div class="row blackandblue corner-big" id="edit-post">
+
+						<h1 class="white-text">
+							{{title}}
+						</h1>
+						<p class="white-text center">
+							{{messages[titles|length - loop.index]}}
+						</p>
+						<a class="black-text white btn center-block corner-big modal-trigger" data-target="editmodal" id="edit-button" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[loop.index-1]}}" data-date="{{dates[loop.index-1]}}"><i class="far fa-edit"></i>EDIT</a>
+
+			</div>
+
+
+			{% endfor %}
+			<div class="modal" id="editmodal">
+				<div class="modal content">
+					<div class="input-field col s12 z-depth-3">
+            <input name="title" type="text" class="validate" placeholder="Title">
+          </div>
+        <div class="input-field col s12 z-depth-3">
+          <input name="message" type="text" class="validate" placeholder="Message">
+        </div>
+				</div>
+			</div>
+
 </html>

@@ -471,48 +471,62 @@ body.rip-image {
                                                 .decent-padding {
                                                   padding: 20px; }
 
-                                                  .card--content {
-                                                    background-color: white;
-                                                    min-width: 200px !important;
-                                                    margin: 10px;
+                                                  .corner-big {
                                                     border-radius: 15px; }
 
-                                                    .blogs {
-                                                      min-width: 100% !important;
-                                                      min-height: 200px !important;
-                                                      display: flex;
-                                                      overflow-x: auto;
-                                                      margin: 0px !important; }
+                                                    .center-block {
+                                                      display: block;
+                                                      margin: 0 auto; }
 
-                                                      #loginFormBody {
-                                                        background: #833ab4;
-                                                        background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);
-                                                        background: linear-gradient(to left, #fcb045, #fd1d1d 50%, #833ab4); }
-                                                        #loginFormBody #add-post {
-                                                          width: 80%; }
-                                                          #loginFormBody #add-post .card {
-                                                            height: 300px;
-                                                            border-radius: 30px; }
-                                                            #loginFormBody #add-post .card #post-submit {
-                                                              color: #000134;
-                                                              margin-top: 10px; }
-                                                              #loginFormBody #add-post .card textarea {
-                                                                outline: none;
-                                                                resize: none;
-                                                                -webkit-box-shadow: none;
-                                                                -moz-box-shadow: none;
-                                                                box-shadow: none; }
-                                                        #loginFormBody #new-post {
-                                                          width: 90%;
-                                                          margin-left: 5%;
-                                                          margin-right: 5%;
-                                                          border: none;
-                                                          height: 250px; }
-                                                          #loginFormBody #new-title {
-                                                            width: 90%;
-                                                            margin-left: 5%;
-                                                            margin-right: 5%;
-                                                            border: none; }
+                                                      .card--content {
+                                                        background-color: white;
+                                                        min-width: 200px !important;
+                                                        margin: 10px;
+                                                        border-radius: 15px; }
+
+                                                        .error-msg {
+                                                          font-size: 20px;
+                                                          font-weight: 800;
+                                                          font-family: 'Work Sans';
+                                                          border-radius: 5px; }
+
+                                                          .blogs {
+                                                            min-width: 100% !important;
+                                                            min-height: 200px !important;
+                                                            display: flex;
+                                                            overflow-x: auto;
+                                                            margin: 0px !important; }
+
+                                                            #loginFormBody {
+                                                              background: #833ab4;
+                                                              background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);
+                                                              background: linear-gradient(to left, #fcb045, #fd1d1d 50%, #833ab4); }
+                                                              #loginFormBody #add-post {
+                                                                width: 80%; }
+                                                                #loginFormBody #add-post .card {
+                                                                  height: 300px;
+                                                                  border-radius: 30px; }
+                                                                  #loginFormBody #add-post .card #post-submit {
+                                                                    color: #000134; }
+                                                                    #loginFormBody #add-post .card textarea {
+                                                                      outline: none;
+                                                                      resize: none;
+                                                                      -webkit-box-shadow: none;
+                                                                      -moz-box-shadow: none;
+                                                                      box-shadow: none; }
+                                                              #loginFormBody #edit-post {
+                                                                width: 80%; }
+                                                                #loginFormBody #new-post {
+                                                                  width: 90%;
+                                                                  margin-left: 5%;
+                                                                  margin-right: 5%;
+                                                                  border: none;
+                                                                  height: 175px; }
+                                                                  #loginFormBody #new-title {
+                                                                    width: 90%;
+                                                                    margin-left: 5%;
+                                                                    margin-right: 5%;
+                                                                    border: none; }
 
 .blackandblue {
   background: #000134 !important; }
@@ -540,7 +554,8 @@ body.rip-image {
               #login-form .input-field input {
                 border-bottom: none !important;
                 font-family: 'Work Sans';
-                font-weight: light; }
+                font-weight: light;
+                margin: 0px; }
                 #login-form .input-field label {
                   display: none; }
 

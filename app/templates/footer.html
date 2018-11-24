@@ -1,6 +1,6 @@
 <section class="card blogs blackandblue" id="blogs">
   {% for title in titles | reverse %}
-  <div class="card--content black-text center modal-trigger" href="#{{strippedtitles[loop.index-1]}}" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[loop.index-1]}}" data-date="{{dates[loop.index-1]}}">
+  <div class="card--content black-text center modal-trigger" href="#{{strippedtitles[loop.index-1]}}" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[titles|length - loop.index] }}" data-date="{{dates[titles|length - loop.index] }}">
     <h3>{{title | truncate(10)}}</h3>
     <p>
       {{messages[titles|length - loop.index] | truncate(30)}}
@@ -10,7 +10,7 @@
         </h6>
 
     </div>
-    <div id="{{strippedtitles[loop.index-1]}}" class="modal"></div>
+    <div id="{{strippedtitles[titles|length - loop.index]}}" class="modal"></div>
 
   {% endfor %}
 

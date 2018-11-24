@@ -28,7 +28,7 @@ assets.register('scss_all', scss)
 messageBlogs = []
 dateBlogs = []
 titleBlogs = []
-
+titleStripped = []
 token, email = "",""
 jsonMD = {
         "design": {
@@ -71,7 +71,18 @@ works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
-
+def renderDB():
+    messageBlogs = []
+    dateBlogs = []
+    titleBlogs = []
+    titleStripped = []
+    all_blogs = db.child("blogs").get()
+    for user in all_blogs.each():
+        titleBlogs.append(user.key())
+        titleStripped.append(''.join(filter(str.isalnum, user.key())))
+        dateBlogs.append(user.val()["date"])
+        messageBlogs.append(user.val()["message"])
+    return [messageBlogs, dateBlogs, titleBlogs, titleStripped]
 def ulogin(em, pw):
     url = "%s?key=%s" % (service, config["apiKey"])
     data = {"email": em,
@@ -87,41 +98,32 @@ def ulogin(em, pw):
         return "Error"
 @app.route('/')
 def home():
+    #   I want to make a method for the code below, but have other important things to do
     firebase = pyrebase.initialize_app(config)
     db = firebase.database()
-    messageBlogs = []
-    dateBlogs = []
-    titleBlogs = []
-    titleStripped = []
-    all_blogs = db.child("blogs").get()
-    for user in all_blogs.each():
-        titleBlogs.append(user.key()) # Morty
-        titleStripped.append(''.join(filter(str.isalnum, user.key())))
-        dateBlogs.append(user.val()["date"]) # {name": "Mortimer 'Morty' Smith"}
-        messageBlogs.append(user.val()["message"])
-
-    return render_template("index.html", name="Home", description=jsonMD["Home"]["description"], titles=titleBlogs, strippedtitles=titleStripped, dates=dateBlogs, messages=messageBlogs)
-
+    return render_template("index.html", name="Home", description=jsonMD["Home"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 @app.route('/about/')
 def about():
     return render_template("about.html", name="About", description=jsonMD["About"]["description"])
 
 @app.route('/postMessage/', methods=['POST'])
 def postMessage():
+    if (request.cookies.get('id')):
+        # data to save
+        data = {
 
-    # data to save
-    data = {
+            "message": request.form['messagePost'],
+            "date": datetime.now(timezone.utc).strftime("%m/%d/%Y"),
+            "author": "Harris Beg"  #   will change later
+        }
 
-        "message": request.form['messagePost'],
-        "date": datetime.now(timezone.utc).strftime("%m/%d/%Y"),
-        "author": "Harris Beg"  #   will change later
-    }
+        results = db.child("blogs").child(request.form['titlePost']).set(data, token)
+        #   db.blog.insert(request.form['messagePost'])
 
-    # Pass the user's idToken to the push method
-    results = db.child("blogs").child(request.form['titlePost']).set(data, token)
-    #   db.blog.insert(request.form['messagePost'])
+        return redirect("/#blogs")
+    else:
+        return render_template("admin.html",ERRORCODE="Session expired.")
 
-    return redirect("/#blogs")
 def stream_handler(message):
 
         print("Updated!")
@@ -141,7 +143,9 @@ def admin():
 def adminpanel():
     email = request.args.get('email')
     id = request.args.get('id')
-    return render_template("adminpanel.html", email=email, id=id)
+
+    return render_template("adminpanel.html", email=email, id=id, titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -151,10 +155,13 @@ def login():
 
             req= make_response(redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9]))
             token = yx["idToken"]
+            if not request.cookies.get('id'):
+                req.set_cookie('id', token, max_age=60)
             #req.set_cookie('active', True)
             return req
         else:
-            return "nil"
+            return render_template("admin.html",ERRORCODE="Invalid email or password.")
+
 
 
 @app.route('/projects/<projectname>')
