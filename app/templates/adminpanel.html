@@ -55,7 +55,9 @@
 						<a class="black-text white btn center-block corner-big modal-trigger" data-target="editmodal" id="edit-button" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[loop.index-1]}}" data-date="{{dates[loop.index-1]}}"><i class="far fa-edit"></i>EDIT</a>
 
 			</div>
-
+			<script type="text/javascript">
+			$("#editmodal").modal('open');
+			</script>
 
 			{% endfor %}
 			<div class="modal" id="editmodal">

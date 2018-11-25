@@ -2,7 +2,7 @@
 {% block content %}
 <div class="big project">
 
-    {% for item in titles %}
+    {% for item in titlesD %}
       <div class="row blackandblue round">
         <div class="col s3">
           <img src="{{ url_for('static', filename='assets/'+images[loop.index-1]) }}" width="70%" style="margin: 15%"/>

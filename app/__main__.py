@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request, redirect,url_for, make_response
 from flask_assets import Environment, Bundle
+from flask_sitemap import Sitemap
 from datetime import datetime, timezone
 import pyrebase
 import requests
 import json
 import os
 app = Flask(__name__)
+smp = Sitemap(app=app)
+app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS']=True
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 apiKey = os.environ.get('APIKey', None)
 config = {
@@ -104,7 +107,7 @@ def home():
     return render_template("index.html", name="Home", description=jsonMD["Home"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 @app.route('/about/')
 def about():
-    return render_template("about.html", name="About", description=jsonMD["About"]["description"])
+    return render_template("about.html", name="About", description=jsonMD["About"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 
 @app.route('/postMessage/', methods=['POST'])
 def postMessage():
@@ -130,11 +133,11 @@ def stream_handler(message):
 
 @app.route('/design/')
 def design():
-    return render_template("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"])
+    return render_template("design.html", name="Design", works=works,workdescriptions=workdescriptions,description=jsonMD["Design"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 
 @app.route('/projects/')
 def projects():
-    return render_template("projects.html", name="Projects", description=jsonMD["Projects"]["description"])
+    return render_template("projects.html", name="Projects", description=jsonMD["Projects"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 @app.route('/admin/')
 def admin():
     return render_template("admin.html")
@@ -169,19 +172,19 @@ def projects_id(projectname):
     if (projectname == "UCSD"):
         desP = ["Center for Energy Research", "Cancer Center"]
         detail = ["At the Center of Energy, I attempted to find optimal computer vision settings (with OpenCV) for detecting the sun to aid the solar panels at UCSD.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF)."]
-        return render_template("project.html", name=projectname, titles=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
+        return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
     elif (projectname == "skinCAM"):
         desP = ["skinCAM"]
         detail = ["A child of my imagination, skinCAM, a patent-pending app, was created to allow for public access to dermatologic resources. By utilizing machine learning, skinCAM accurately detects many skin diseases - all for the price of, well, nil."]
-        return render_template("project.html", name=projectname, titles=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
+        return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
     elif (projectname == "MSH"):
         desP = ["MySocialHub"]
         detail = ["A developer at MySocialHub, my primary job was frontend development for several sites including the famous salomondrin.com. These sites were all centered around one central platform, which primarily used the Laravel framework."]
-        return render_template("project.html", name=projectname, titles=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
+        return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
     elif (projectname == "Grabify"):
         desP = ["Grabify"]
         detail = ["One of the most important sites I've worked on, Grabify is a security utility that allows one to log the IPs of others through the simple click of a link."]
-        return render_template("project.html", name=projectname, titles=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
+        return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 
 @app.errorhandler(404)
 def pagenotfound(e):

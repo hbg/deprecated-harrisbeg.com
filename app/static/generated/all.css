@@ -495,7 +495,8 @@ body.rip-image {
                                                             min-height: 200px !important;
                                                             display: flex;
                                                             overflow-x: auto;
-                                                            margin: 0px !important; }
+                                                            margin: 0px !important;
+                                                            box-shadow: none; }
 
                                                             #loginFormBody {
                                                               background: #833ab4;
