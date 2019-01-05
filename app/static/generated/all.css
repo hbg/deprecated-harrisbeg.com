@@ -540,25 +540,29 @@ body.rip-image {
       font-family: 'Work Sans';
       font-weight: light; }
 
-      #projectTitle {
-        font-size: 2.7rem; }
+      .medium-thicc {
+        font-family: 'Work Sans';
+        font-weight: 900; }
 
-        #login-form {
-          width: 80%;
-          margin-left: 10%; }
-          #login-form h1 {
-            font-family: 'Work Sans';
-            font-weight: lighter; }
-            #login-form .input-field {
-              background: white;
-              border-radius: 10px; }
-              #login-form .input-field input {
-                border-bottom: none !important;
-                font-family: 'Work Sans';
-                font-weight: light;
-                margin: 0px; }
-                #login-form .input-field label {
-                  display: none; }
+        #projectTitle {
+          font-size: 2.7rem; }
+
+          #login-form {
+            width: 80%;
+            margin-left: 10%; }
+            #login-form h1 {
+              font-family: 'Work Sans';
+              font-weight: lighter; }
+              #login-form .input-field {
+                background: white;
+                border-radius: 10px; }
+                #login-form .input-field input {
+                  border-bottom: none !important;
+                  font-family: 'Work Sans';
+                  font-weight: light;
+                  margin: 0px; }
+                  #login-form .input-field label {
+                    display: none; }
 
 html {
   -moz-user-select: -moz-none;

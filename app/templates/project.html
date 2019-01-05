@@ -3,14 +3,14 @@
 <div class="big project">
 
     {% for item in titlesD %}
-      <div class="row blackandblue round">
+      <div class="row blackandblue round" style="margin-bottom: 20px">
         <div class="col s3">
-          <img src="{{ url_for('static', filename='assets/'+images[loop.index-1]) }}" width="70%" style="margin: 15%"/>
+          <amp-img src="{{ url_for('static', filename='assets/'+images[loop.index-1]) }}" width="70%" style="margin: 15%"/>
 
           </div>
         <div class="col s9">
-            <h1 class="theme-color ultralight left" id="projectTitle">{{ item.upper() }}</h1>
-            <p class="theme-color light left">{{ details[loop.index-1]}}</p>
+            <h1 class="theme-color medium-thicc left" id="projectTitle">{{ item.upper() }}</h1>
+            <p class="theme-color medium-thicc left">{{ details[loop.index-1]}}</p>
             </div>
         </div>
     {% endfor %}

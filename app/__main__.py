@@ -20,23 +20,16 @@ config = {
 if (apiKey == None):
     with open(r"app/static/js/config.json") as f:
         config = json.load(f)
-        print(str(config))
-
-
-
 assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 assets.register('scss_all', scss)
-messageBlogs = []
-dateBlogs = []
-titleBlogs = []
-titleStripped = []
+global messageBlogs,dateBlogs,titleBlogs,titleStripped
 token, email = "",""
 jsonMD = {
         "design": {
             "titles": ["App Dev","TechnologiCoders","Linker","Mustafar","Royal Guard","Hypercharged"],
-            "workdescriptions": ["The logo for the App Development club was conceived by me after thinking of how to combine the CCA Spirit colors, the symbol of the raven, and imagery that very clearly depicts the purpose of the club.", "While the primary objective of TechnologiCoders was to primarily focus on hardware, creating a website with a logo enforcing an image of creativity would likely attract more sponsors.", "An impromptu creation, 'Linker' was an app designed to link mobile phones to computers - a link very clearly seen in the logo itself.", "A planet in Star Wars hosting Darth Vader's own castle.","A royal guard from the Star Wars original trilogy.","Just like our content and quality, the Hypercharged logo is straight to the point and direct - both in styling and meaning."]
+            "workdescriptions": ["The logo for the App Development club was conceived by myself after thinking of how to combine Canyon Crest Academy's Spirit colors, its very own Raven, and imagery that very clearly depicts the purpose of the club.", "While the primary objective of TechnologiCoders was to primarily focus on hardware, creating a website with a logo enforcing an image of creativity would likely attract more sponsors.", "An impromptu creation, 'Linker' was an app designed to link mobile phones to computers - a link very clearly seen in the logo itself.", "A planet in Star Wars hosting Darth Vader's own castle.","A royal guard from the Star Wars original trilogy.","Just like our content and quality, the Hypercharged logo is straight to the point and direct - both in styling and meaning."]
 
         },
         "Home": {
@@ -68,19 +61,16 @@ jsonMD = {
 
             }
         }
-        }
-
+    }
 works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 def renderDB():
-    messageBlogs = []
-    dateBlogs = []
-    titleBlogs = []
-    titleStripped = []
+    messageBlogs,dateBlogs,titleBlogs,titleStripped = [],[],[],[]
     all_blogs = db.child("blogs").get()
     for user in all_blogs.each():
+
         titleBlogs.append(user.key())
         titleStripped.append(''.join(filter(str.isalnum, user.key())))
         dateBlogs.append(user.val()["date"])
@@ -95,7 +85,7 @@ def ulogin(em, pw):
     is_login_successful = result.ok
     json_result = result.json()
 
-    if (("INVALID_PASSWORD") not in str(json_result)): # Crappy system but it'll do
+    if (is_login_successful): # Crappy system but it'll do
         return json_result
     else:
         return "Error"
@@ -128,7 +118,6 @@ def postMessage():
         return render_template("admin.html",ERRORCODE="Session expired.")
 
 def stream_handler(message):
-
         print("Updated!")
 
 @app.route('/design/')
@@ -171,7 +160,7 @@ def login():
 def projects_id(projectname):
     if (projectname == "UCSD"):
         desP = ["Center for Energy Research", "Cancer Center"]
-        detail = ["At the Center of Energy, I attempted to find optimal computer vision settings (with OpenCV) for detecting the sun to aid the solar panels at UCSD.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF)."]
+        detail = ["At the Center for Energy Research and the University of San Diego, California, I attempted to find optimal computer vision settings (with OpenCV) for detecting the sun to aid the solar panels at UCSD. Much of this internship required optical and machine-learning-oriented knowledge.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF). These mutation annotation format files, then, can be used to identify patterns in mutations within specific cancer types."]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
     elif (projectname == "skinCAM"):
         desP = ["skinCAM"]
@@ -179,11 +168,11 @@ def projects_id(projectname):
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
     elif (projectname == "MSH"):
         desP = ["MySocialHub"]
-        detail = ["A developer at MySocialHub, my primary job was frontend development for several sites including the famous salomondrin.com. These sites were all centered around one central platform, which primarily used the Laravel framework."]
+        detail = ["A developer at MySocialHub, my primary job was frontend development for several sites including the famous salomondrin.com. These sites were all centered around one central platform, which primarily used the Laravel framework. With the developers assigned to different tasks, I have garnered both frontend and backend web development experience from this job."]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
     elif (projectname == "Grabify"):
         desP = ["Grabify"]
-        detail = ["One of the most important sites I've worked on, Grabify is a security utility that allows one to log the IPs of others through the simple click of a link."]
+        detail = ["One of the most important sites I've worked on, Grabify is a security utility that allows one to log the IPs of others through the simple click of a link. Grabify is currently ranked at the #36,000 spot nationally and has been featured on MTV's show, Catfish."]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 
 @app.errorhandler(404)

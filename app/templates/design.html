@@ -57,12 +57,12 @@
     <nav class="fixed" id="nav">
   		<div class="nav-wrapper container">
         <a href="{{url_for('home')}}">
-					<img id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
+					<amp-img id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
   			</a>
 
 
         <ul id="nav-mobile" class="sidenav">
-  				<li id="headerItemNav"><a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
+  				<li id="headerItemNav"><a><amp-img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
 
           <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
           <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
@@ -79,7 +79,7 @@
   	</nav>
     <div class="scrollable">
   	<div class="mdiv">
-  		<img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>
+  		<amp-img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>
   	</div>
   	<div id="txt-nm-div">
   		<h3 id="nm-text" class="animated fadeInUp">DESIGN
@@ -107,7 +107,7 @@
 
           <div class="col s6 transparent card">
             <div class="card-image">
-              <img src="{{ url_for('static', filename='assets/designs/designs'+(loop.index)|string+'.png') }}" class="design-image z-depth-2" height="150"/>
+              <amp-img src="{{ url_for('static', filename='assets/designs/designs'+(loop.index)|string+'.png') }}" class="design-image z-depth-2" height="150"/>
               </div>
         </div>
         </div>
