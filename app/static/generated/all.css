@@ -1,5 +1,6 @@
 .design body {
-  background: #000134 !important; }
+  background: #000134 !important;
+  overflow-x: hidden; }
   .design body .flexible {
     width: 90vw;
     margin-left: 5vw;
@@ -7,8 +8,8 @@
     .design body .design-image {
       border-radius: 15px;
       margin-top: 15px;
-      width: auto;
-      max-width: 90%;
+      # width: auto;
+      # max-width: 90%;
       margin-left: auto;
       object-fit: cover;
       margin-right: auto;
