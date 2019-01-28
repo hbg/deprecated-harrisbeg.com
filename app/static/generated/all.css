@@ -383,7 +383,8 @@ body.rip-image {
 
     .big {
       width: 100%;
-      height: auto;
+      height: auto !important;
+      overflow: hidden;
       min-height: 200px; }
 
       .section-icon {
@@ -436,106 +437,132 @@ body.rip-image {
                             #nav, #nav-mobile {
                               background: #000134; }
 
-                              h4 {
-                                font-size: 5rem; }
+                              .light-text {
+                                font-family: 'Work Sans'; }
 
-                                .light-text {
-                                  font-family: 'Work Sans'; }
+                                #nav-logo {
+                                  margin-top: 10px; }
 
-                                  #nav-logo {
-                                    margin-top: 10px; }
+                                  #nav-mobile {
+                                    color: #fff !important; }
 
-                                    #nav-mobile {
-                                      color: #fff !important; }
+                                    #headerItemNav {
+                                      height: 80px;
+                                      width: 100%; }
 
-                                      #headerItemNav {
-                                        height: 80px;
-                                        width: 100%; }
+                                      #nav-header {
+                                        display: block;
+                                        margin: 0 auto !important; }
 
-                                        #nav-header {
-                                          display: block;
-                                          margin: 0 auto !important; }
+                                        .divider, .transparent {
+                                          background: 0 0;
+                                          box-shadow: none;
+                                          -moz-box-shadow: none;
+                                          -webkit-box-shadow: none; }
 
-                                          .divider, .transparent {
-                                            background: 0 0;
-                                            box-shadow: none;
-                                            -moz-box-shadow: none;
-                                            -webkit-box-shadow: none; }
+                                          .divider {
+                                            width: 2% !important; }
 
-                                            .divider {
-                                              width: 2% !important; }
+                                            .fixed {
+                                              position: fixed;
+                                              z-index: 999; }
 
-                                              .fixed {
-                                                position: fixed;
-                                                z-index: 999; }
+                                              .decent-padding {
+                                                padding: 20px; }
 
-                                                .decent-padding {
-                                                  padding: 20px; }
+                                                @media screen and (max-width: 650px) {
+                                                  #what-i-do {
+                                                    min-height: 900px !important;   }
+                                                    #experience {
+                                                      min-height: 500px !important;   }
+}
 
-                                                  #preloader {
-                                                    height: 100vh !important;
-                                                    width: 100vw !important; }
+#nm-text:hover {
+  color: black; }
 
-                                                    .important-txt {
-                                                      font-family: 'Major Mono Display', monospace !important; }
+  #nm-text {
+    transition: ease-all 0.2s; }
 
-                                                      .corner-big {
-                                                        border-radius: 15px; }
+    .vertical-div-small {
+      height: 50px !important;
+      background: transparent;
+      width: 100% !important; }
 
-                                                        .center-block {
-                                                          display: block;
-                                                          margin: 0 auto; }
+      .vertical-div-medium {
+        height: 100px !important;
+        background: transparent;
+        width: 100% !important; }
 
-                                                          .card--content {
-                                                            background-color: white;
-                                                            min-width: 200px !important;
-                                                            margin: 10px;
-                                                            border-radius: 15px; }
+        #preloader {
+          height: 100vh !important;
+          width: 100vw !important; }
 
-                                                            .error-msg {
-                                                              font-size: 20px;
-                                                              font-weight: 800;
-                                                              font-family: 'Work Sans';
-                                                              border-radius: 5px; }
+          .important-txt {
+            font-family: 'Major Mono Display', monospace !important; }
 
-                                                              .blogs {
-                                                                min-width: 100% !important;
-                                                                min-height: 200px !important;
-                                                                display: flex;
-                                                                overflow-x: auto;
-                                                                margin: 0px !important;
-                                                                box-shadow: none; }
+            .corner-big {
+              border-radius: 15px; }
 
-                                                                #loginFormBody {
-                                                                  background: #833ab4;
-                                                                  background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);
-                                                                  background: linear-gradient(to left, #fcb045, #fd1d1d 50%, #833ab4); }
-                                                                  #loginFormBody #add-post {
-                                                                    width: 80%; }
-                                                                    #loginFormBody #add-post .card {
-                                                                      height: 300px;
-                                                                      border-radius: 30px; }
-                                                                      #loginFormBody #add-post .card #post-submit {
-                                                                        color: #000134; }
-                                                                        #loginFormBody #add-post .card textarea {
-                                                                          outline: none;
-                                                                          resize: none;
-                                                                          -webkit-box-shadow: none;
-                                                                          -moz-box-shadow: none;
-                                                                          box-shadow: none; }
-                                                                  #loginFormBody #edit-post {
-                                                                    width: 80%; }
-                                                                    #loginFormBody #new-post {
-                                                                      width: 90%;
-                                                                      margin-left: 5%;
-                                                                      margin-right: 5%;
-                                                                      border: none;
-                                                                      height: 175px; }
-                                                                      #loginFormBody #new-title {
-                                                                        width: 90%;
-                                                                        margin-left: 5%;
-                                                                        margin-right: 5%;
-                                                                        border: none; }
+              .center-block {
+                display: block;
+                margin: 0 auto; }
+
+                .zoom {
+                  transition: transform 0.2s; }
+
+                  .zoom:hover {
+                    transform: scale(1.2); }
+
+                    .card--content {
+                      background-color: white;
+                      min-width: 200px !important;
+                      margin: 10px;
+                      border-radius: 15px; }
+
+                      .error-msg {
+                        font-size: 20px;
+                        font-weight: 800;
+                        font-family: 'Work Sans';
+                        border-radius: 5px; }
+
+                        .blogs {
+                          min-width: 100% !important;
+                          min-height: 200px !important;
+                          display: flex;
+                          overflow-x: auto;
+                          margin: 0px !important;
+                          box-shadow: none; }
+
+                          #loginFormBody {
+                            background: #833ab4;
+                            background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);
+                            background: linear-gradient(to left, #fcb045, #fd1d1d 50%, #833ab4); }
+                            #loginFormBody #add-post {
+                              width: 80%; }
+                              #loginFormBody #add-post .card {
+                                height: 300px;
+                                border-radius: 30px; }
+                                #loginFormBody #add-post .card #post-submit {
+                                  color: #000134; }
+                                  #loginFormBody #add-post .card textarea {
+                                    outline: none;
+                                    resize: none;
+                                    -webkit-box-shadow: none;
+                                    -moz-box-shadow: none;
+                                    box-shadow: none; }
+                            #loginFormBody #edit-post {
+                              width: 80%; }
+                              #loginFormBody #new-post {
+                                width: 90%;
+                                margin-left: 5%;
+                                margin-right: 5%;
+                                border: none;
+                                height: 175px; }
+                                #loginFormBody #new-title {
+                                  width: 90%;
+                                  margin-left: 5%;
+                                  margin-right: 5%;
+                                  border: none; }
 
 .blackandblue {
   background: #000134 !important; }

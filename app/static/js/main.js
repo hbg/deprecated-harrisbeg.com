@@ -11,11 +11,11 @@ $(document).on('ready', function() {
 		 *  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
 		 *  background: linear-gradient(to right, #4A00E0, #8E2DE2);
 		**/
-		$('body').css("background","-webkit-linear-gradient(to right, #ff5f6d, #ffc371)");
-		$('body').css("background","linear-gradient(to right, #ff5f6d, #ffc371)");
-		$('html').css("background","-webkit-linear-gradient(to right, #ff5f6d, #ffc371)");
-		$('html').css("background","linear-gradient(to right, #ff5f6d, #ffc371)");
-		color('#ffd000');
+		$('body').css("background","-webkit-linear-gradient(to right, #fc466b, #3f5efb)");
+		$('body').css("background","linear-gradient(to right, #fc466b, #3f5efb)");
+		$('html').css("background","-webkit-linear-gradient(to right, #fc466b, #3f5efb)");
+		$('html').css("background","linear-gradient(to right, #fc466b, #3f5efb)");
+		color('#3f5efb');
 
 	}
 	else if (hr >= 12 && hr < 19) {

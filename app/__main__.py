@@ -107,7 +107,6 @@ def postMessage():
     if (request.cookies.get('id')):
         # data to save
         data = {
-
             "message": request.form['messagePost'],
             "date": datetime.now(timezone.utc).strftime("%m/%d/%Y"),
             "author": "Harris Beg"  #   will change later
@@ -156,9 +155,6 @@ def login():
             return req
         else:
             return render_template("admin.html",ERRORCODE="Invalid email or password.")
-
-
-
 @app.route('/projects/<projectname>')
 def projects_id(projectname):
     if (projectname == "UCSD"):

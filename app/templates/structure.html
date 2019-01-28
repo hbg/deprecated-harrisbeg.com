@@ -33,6 +33,7 @@
 		  <link href="{{ url_for('static', filename='css/materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
 		  <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet" />
 		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+		  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 		  <script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
 			<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/apple-touch-icon.png') }}">
 			<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/favicon-32x32.png') }}">
@@ -69,10 +70,10 @@
 		<h1 style="color: black;">Loading...</h1>
 	</div>
 	<div id="content">
-		<nav class="fixed" id="nav">
+		<nav class="fixed z-depth-0 transparent" id="nav">
 			<div class="nav-wrapper container">
 	      <a href="{{url_for('home')}}">
-					<img id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
+					<img class="zoom" id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
 				</a>
 
 

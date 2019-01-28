@@ -1,8 +1,8 @@
 {% extends "structure.html" %}
 {% block content %}
-		<div class="big">
+		<div class="big " id="what-i-do">
 			<div class="row">
-			<h1 class="black-text header-text wow animated bounceInLeft">What I Do</h1>
+			<h1 class="white-text header-text wow animated bounceInLeft">What I Do</h1>
 		</div>
 			<table class="responsive-table  animated bounce wow">
 				<tbody class="main">
@@ -28,18 +28,48 @@
 				</tbody>
 			</table>
 			</div>
-			<div class="big text-center side-margin div-2">
-					<!--<h1 class="section-icon rellax" data-rellax-speed="-2">
-							<i class="fas fa-user black-text"></i>
-						</h1>-->
+			
+			<div class="big" id="experience">
+				<h1 class="white-text header-text wow animated bounceInLeft center">Experience</h1>
+				<table class="responsive-table  animated bounce wow">
+				<tbody class="main">
+					<tr>
+						<td class=" roll-cell">
+							<h4 class="important-txt  white-text">Languages</h4>
+							<h4 class="white-text">
+								<i class="devicon-python-plain tooltipped" data-position="top" data-tooltip="Python"></i>
+								<i class="devicon-java-plain tooltipped" data-position="top" data-tooltip="Java"></i>
+								<i class="devicon-javascript-plain tooltipped" data-position="top" data-tooltip="JS"></i>
+								<i class="devicon-swift-plain tooltipped" data-position="top" data-tooltip="Swift"></i>
+								<i class="devicon-css3-plain tooltipped" data-position="top" data-tooltip="CSS"></i>
+								<i class="devicon-sass-original tooltipped" data-position="top" data-tooltip="SASS"></i>
+								{# Not a language but oh well ^ #}
+							</h4>
 
-					<h1 data-rellax-speed="0" class="rellax">
-						🔥
-					</h1>
-								<h1 class="black-text header-text wow animated bounceInLeft center">Past Work</h1>
-
+						</td>
+						<td class="divider"></td>
+							
+						<td class=" roll-cell">
+							<h4 class="important-txt  white-text">Utilities</h4>
+							<h4 class="white-text">
+								<i class="devicon-heroku-original tooltipped" data-position="top" data-tooltip="Heroku"></i>
+								<i class="devicon-illustrator-line tooltipped" data-position="top" data-tooltip="Illustrator"></i>
+								<i class="devicon-bitbucket-plain tooltipped" data-position="top" data-tooltip="BitBucket"></i>
+								<i class="devicon-android-plain tooltipped" data-position="top" data-tooltip="Android Studio"></i>
+								<i class="devicon-git-plain tooltipped" data-position="top" data-tooltip="git flow"></i>
+								<i class="devicon-photoshop-line tooltipped" data-position="top" data-tooltip="Photoshop"></i>
+							</h4>
+						</td>
+						<td class="divider"></td>
+					</tr>
+				</tbody>
+			</table>
 			</div>
 			<div class="big side-margin">
+				<div class="vertical-div-small">
+					</div>
+								<h1 class="white-text header-text wow animated bounceInLeft center">Past Work</h1>
+
 				<div class="row companies" >
 					<div class="col s4  company">
 						<a href="{{url_for('projects_id',projectname='Grabify')}}">
