@@ -18,22 +18,21 @@ $(document).on('ready', function() {
 		color('#3f5efb');
 
 	}
-	else if (hr >= 12 && hr < 19) {
-		$('body').css("background","-webkit-linear-gradient(to right, #36d1dc, #5b86e5)");
-
-		$('body').css("background","linear-gradient(to right, #36d1dc, #5b86e5)");
-		$('html').css("background","-webkit-linear-gradient(to right, #36d1dc, #5b86e5)");
-
-		$('html').css("background","linear-gradient(to right, #36d1dc, #5b86e5)");
-		color('#00d8ff');
+	else if (false) {
+		$('body').css("background","-webkit-linear-gradient(to right,  #dc2430, #7b4397)");
+		$('body').css("background","linear-gradient(to right, #dc2430, #7b4397)");
+		$('html').css("background","-webkit-linear-gradient(to right, #dc2430, #7b4397)");
+		$('html').css("background","linear-gradient(to right, #dc2430, #7b4397)");
+		color('#7b4397');
 
 	}
 	else {
-		$('body').css("background","-webkit-linear-gradient(to right, #6441a5, #2a0845)");
-		$('body').css("background","linear-gradient(to right, #6441a5, #2a0845)");
-		$('html').css("background","-webkit-linear-gradient(to right, #6441a5, #2a0845)");
-		$('html').css("background","linear-gradient(to right, #6441a5, #2a0845)");
-		color('#6441a5');
+		$('body').css("background","-webkit-linear-gradient(to right, #ee0979, #ff6a00)");
+		$('body').css("background","linear-gradient(to right,  #ee0979, #ff6a00)");
+		$('html').css("background","-webkit-linear-gradient(to right, #ee0979, #ff6a00)");
+		$('html').css("background","linear-gradient(to right, #ee0979, #ff6a00)");
+		color('#ee0979');
+
 
 	}
 	$('.sidenav').sidenav();
