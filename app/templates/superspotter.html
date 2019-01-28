@@ -20,7 +20,6 @@
 	        ]
 	      }
 	    </script>
-
 		  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<meta name="description" content="{{ description }}"/>
 			<meta property="og:site_name" content="Harris Beg's Portfolio"/>
@@ -47,74 +46,58 @@
 
 			<meta name="google-site-verification" content="M4NtSw5eYme7UjF2FoelaDL4-oc5n9nMtQPrGICANcc" />
 			<meta name="wot-verification" content="0f346e5ccf2ddbcbbb96"/>
-			<script>
-			$("#preloader").show();
-      $("#content").hide();
-			console.log("Loading");
-			</script>
+
 				<meta name="theme-color" content="#000134">
 
 
 		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-
 			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 			{% assets "scss_all" %}
 			        <link rel="stylesheet" href="{{ url_for('static', filename='generated/all.css') }}" type="text/css" />
 			{% endassets %}
 </head>
 <body>
-	<div id="preloader" style="background: white;">
-		<h1 style="color: black;">Loading...</h1>
-	</div>
-	<div id="content">
-		<nav class="fixed" id="nav">
-			<div class="nav-wrapper container">
-	      <a href="{{url_for('home')}}">
-					<img id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
-				</a>
+	<nav class="fixed" id="nav">
+		<div class="nav-wrapper container">
+      <a href="{{url_for('home')}}">
+				<img id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
+			</a>
 
 
-	      <ul id="nav-mobile" class="sidenav">
-					<li id="headerItemNav"><a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
+      <ul id="nav-mobile" class="sidenav">
+				<li id="headerItemNav"><a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
 
-	        <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
-	        <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
-					<li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
-					<li><a href="{{url_for('design')}}" class="white-text">Design</a></li>
-					<li>
-							<a class="light"><i class="fab fa-linkedin white-text" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
-							<a class="light" href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square white-text"></i></a>
-							<a class="light"><i class="fab fa-twitter-square white-text" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
-					</li>
-	      </ul>
-	      <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
-	    </div>
-		</nav>
-		<div class="scrollable">
-		<div class="mdiv">
-			<img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>
-		</div>
-		<div id="txt-nm-div">
-			<h3 id="nm-text" class="animated fadeInUp">HARRIS BEG
-				{% if (name !="Home") %}
-				| {{name.upper()}}
-				{% endif %}
-			</h3>
-		</div>
-	</div>
-	      {% block content %}
-	      {% endblock %}
-</div>
-
+        <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
+        <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
+				<li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
+				<li><a href="{{url_for('design')}}" class="white-text">Design</a></li>
+				<li>
+						<a class="light"><i class="fab fa-linkedin white-text" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
+						<a class="light" href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square white-text"></i></a>
+						<a class="light"><i class="fab fa-twitter-square white-text" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
+				</li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
+    </div>
+	</nav>
+<div id='map' style='width: 100%; height: 100vh;'></div>
 <script>
-$("#content").show();
-$("#preloader").hide();
-console.log("Loading");
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic2hhZG93Y3lwaGVyIiwiYSI6ImNqcWpvMHpscjBpMDQ0OXBpNGZ2aG01MzEifQ.qUAT9qOZSBj0d3CCUTjFDg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+
 </script>
-			{% extends "footer.html" %}
+<style>
+.marker {
+	background-image: url({{ url_for('static', filename='assets/mapbox-icon.png') }});
+}
+</style>
+{% extends "footer.html" %}
 
 
 </body>
 </html>
+

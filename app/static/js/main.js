@@ -1,12 +1,6 @@
 
 $(document).on('ready', function() {
-	new WOW({
-		                      boxClass:     'wow',      // default
-		                      animateClass: 'animated', // default
-		                      offset:       200,
-		                      mobile:       true,       // default
-		                      live:         true        // default
-	}).init();
+
 
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
@@ -49,7 +43,50 @@ $(document).on('ready', function() {
     $('#'+$(this).attr("data-str-title")).html(content);
     $('#'+$(this).attr("data-str-title")).modal();
 	});
-	
+	var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-117.1611,32.7157]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Washington, D.C.'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-122.414, 37.776]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'San Francisco, California'
+    }
+  }]
+};
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .addTo(map);
+});
+	new WOW({
+		                      boxClass:     'wow',      // default
+		                      animateClass: 'animated', // default
+		                      offset:       200,
+		                      mobile:       true,       // default
+		                      live:         true        // default
+	}).init();
+
 });
 
 

@@ -76,6 +76,9 @@ def renderDB():
         dateBlogs.append(user.val()["date"])
         messageBlogs.append(user.val()["message"])
     return [messageBlogs, dateBlogs, titleBlogs, titleStripped]
+@app.route('/superSpotter/')
+def superSpotter():
+    return  render_template("superspotter.html", name="Super Spotter", description=jsonMD["Home"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
 def ulogin(em, pw):
     url = "%s?key=%s" % (service, config["apiKey"])
     data = {"email": em,
