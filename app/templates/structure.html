@@ -4,8 +4,10 @@
 
 	  	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 				<script async src="https://cdn.ampproject.org/v0.js"></script>
+				{% if request.path == "/example/1/2" %}
 				<script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
 				<link href='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+				{% endif %}
 				<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
 				</style></noscript>
 				<title>Harris Beg | {{name}}</title>
@@ -112,7 +114,7 @@
 	<a class="waves-effect waves-light btn-floating btn-large black" href="">
 		<i class="large material-icons theme-color">insert_drive_file</i>
 	</a>
-	<a class="waves-effect waves-light btn-floating btn-large black" href="https://linkedin.com/in/harrisbegcca/">
+	<a class="waves-effect waves-light btn-floating btn-large black" target="_blank" href="https://linkedin.com/in/harrisbegcca/">
 		<i class="fab fa-linkedin theme-color"></i>
 	</a>
 	<a class="waves-effect waves-light btn-floating btn-large black" href="mailto:harris@harrisbeg.com">
