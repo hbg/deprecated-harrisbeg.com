@@ -22,7 +22,7 @@ if (apiKey == None):
         config = json.load(f)
 assets = Environment(app)
 assets.url = app.static_url_path
-scss = Bundle('design.scss','about.scss','404.scss', 'contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
+scss = Bundle('design.scss','about.scss','404.scss', '_main.scss','contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 assets.register('scss_all', scss)
 global messageBlogs,dateBlogs,titleBlogs,titleStripped
 token, email = "",""
