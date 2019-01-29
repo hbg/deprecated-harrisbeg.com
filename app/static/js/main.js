@@ -4,6 +4,7 @@ $(document).on('ready', function() {
 
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
+	$('.fixed-action-btn').floatingActionButton();
 
 	if (hr < 12) {
 		/**
@@ -18,7 +19,7 @@ $(document).on('ready', function() {
 		color('#3f5efb');
 
 	}
-	else if (false) {
+	else if (hr < 18) {
 		$('body').css("background","-webkit-linear-gradient(to right,  #dc2430, #7b4397)");
 		$('body').css("background","linear-gradient(to right, #dc2430, #7b4397)");
 		$('html').css("background","-webkit-linear-gradient(to right, #dc2430, #7b4397)");
@@ -31,7 +32,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right,  #ee0979, #ff6a00)");
 		$('html').css("background","-webkit-linear-gradient(to right, #ee0979, #ff6a00)");
 		$('html').css("background","linear-gradient(to right, #ee0979, #ff6a00)");
-		color('#ee0979');
+		color('#ff6a00');
 
 
 	}
@@ -89,7 +90,10 @@ geojson.features.forEach(function(marker) {
 });
 
 
-
+/**
+ * @param  {String}
+ * @return {void}
+ */
 function color(c) {
     //	var theme = document.querySelector("meta[name=theme-color]");
     //	theme.setAttribute("content", c);

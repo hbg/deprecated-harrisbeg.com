@@ -6,11 +6,14 @@ import pyrebase
 import requests
 import json
 import os
+
 app = Flask(__name__)
 smp = Sitemap(app=app)
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS']=True
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 apiKey = os.environ.get('APIKey', None)
+"""
+"""
 config = {
   "apiKey": apiKey,
   "authDomain": "adminhbeg.firebaseapp.com",
@@ -62,6 +65,7 @@ jsonMD = {
             }
         }
     }
+
 works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
 firebase = pyrebase.initialize_app(config)
@@ -156,6 +160,7 @@ def login():
         else:
             return render_template("admin.html",ERRORCODE="Invalid email or password.")
 @app.route('/projects/<projectname>')
+
 def projects_id(projectname):
     if (projectname == "UCSD"):
         desP = ["Center for Energy Research", "Cancer Center"]
