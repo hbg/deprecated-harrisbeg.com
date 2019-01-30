@@ -12,14 +12,16 @@ smp = Sitemap(app=app)
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS']=True
 service = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword"
 apiKey = os.environ.get('APIKey', None)
-"""
-"""
 config = {
   "apiKey": apiKey,
   "authDomain": "adminhbeg.firebaseapp.com",
   "databaseURL": os.environ.get('databaseURL', None),
   "storageBucket": os.environ.get('storageBucket', None)
 }
+#   Purpose: If identified that this is a local env, use .gitignore'd file
+#   
+#   APIKey: Firebase authorization key
+#
 if (apiKey == None):
     with open(r"app/static/js/config.json") as f:
         config = json.load(f)
@@ -27,8 +29,14 @@ assets = Environment(app)
 assets.url = app.static_url_path
 scss = Bundle('design.scss','about.scss','404.scss', '_main.scss','contact.scss', 'projects.scss',"index.scss", filters='pyscss', output='generated/all.css')
 assets.register('scss_all', scss)
+#
+#   SCSS Compiled --> generated/all.css
+#
 global messageBlogs,dateBlogs,titleBlogs,titleStripped
 token, email = "",""
+#
+#   Site 'structure' of sorts
+#
 jsonMD = {
         "design": {
             "titles": ["App Dev","TechnologiCoders","Linker","Mustafar","Royal Guard","Hypercharged"],
@@ -68,40 +76,47 @@ jsonMD = {
 
 works = jsonMD["design"]['titles']
 workdescriptions = jsonMD["design"]["workdescriptions"]
+
+#   Initialize Firebase DB (Will use MongoDB soon)
+
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 def renderDB():
     messageBlogs,dateBlogs,titleBlogs,titleStripped = [],[],[],[]
     all_blogs = db.child("blogs").get()
     for user in all_blogs.each():
-
+        #  Refreshes DB for new blog posts and such
         titleBlogs.append(user.key())
         titleStripped.append(''.join(filter(str.isalnum, user.key())))
         dateBlogs.append(user.val()["date"])
         messageBlogs.append(user.val()["message"])
     return [messageBlogs, dateBlogs, titleBlogs, titleStripped]
+
+# SuperSpotter --> A Beta project tracking supercars
+
 @app.route('/superSpotter/')
 def superSpotter():
     return  render_template("superspotter.html", name="Super Spotter", description=jsonMD["Home"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
+
 def ulogin(em, pw):
     url = "%s?key=%s" % (service, config["apiKey"])
     data = {"email": em,
             "password": pw,
             "returnSecureToken": True}
     result = requests.post(url, json=data)
-    is_login_successful = result.ok
     json_result = result.json()
-
-    if (is_login_successful): # Crappy system but it'll do
+    if (result.ok): # Crappy system but it'll do
         return json_result
     else:
         return "Error"
+
 @app.route('/')
 def home():
     #   I want to make a method for the code below, but have other important things to do
     firebase = pyrebase.initialize_app(config)
     db = firebase.database()
     return render_template("index.html", name="Home", description=jsonMD["Home"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
+
 @app.route('/about/')
 def about():
     return render_template("about.html", name="About", description=jsonMD["About"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
@@ -115,16 +130,11 @@ def postMessage():
             "date": datetime.now(timezone.utc).strftime("%m/%d/%Y"),
             "author": "Harris Beg"  #   will change later
         }
-
         results = db.child("blogs").child(request.form['titlePost']).set(data, token)
         #   db.blog.insert(request.form['messagePost'])
-
         return redirect("/#blogs")
     else:
         return render_template("admin.html",ERRORCODE="Session expired.")
-
-def stream_handler(message):
-        print("Updated!")
 
 @app.route('/design/')
 def design():
@@ -133,6 +143,7 @@ def design():
 @app.route('/projects/')
 def projects():
     return render_template("projects.html", name="Projects", description=jsonMD["Projects"]["description"], titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
+
 @app.route('/admin/')
 def admin():
     return render_template("admin.html")
@@ -141,26 +152,22 @@ def admin():
 def adminpanel():
     email = request.args.get('email')
     id = request.args.get('id')
-
     return render_template("adminpanel.html", email=email, id=id, titles=renderDB()[2], strippedtitles=renderDB()[3], dates=renderDB()[1], messages=renderDB()[0])
-
 
 @app.route('/login', methods=['POST'])
 def login():
         yx = ulogin(request.form['email'], request.form['password'])
         print(str(yx))
-        if (yx != "Error"):
-
+        if (yx != "Error"): #   Pt.2 of crappy system, but it'll do
             req= make_response(redirect("/adminpanel?email="+request.form['email']+"&id="+yx["idToken"][:9]))
             token = yx["idToken"]
             if not request.cookies.get('id'):
                 req.set_cookie('id', token, max_age=60)
-            #req.set_cookie('active', True)
             return req
         else:
             return render_template("admin.html",ERRORCODE="Invalid email or password.")
+            
 @app.route('/projects/<projectname>')
-
 def projects_id(projectname):
     if (projectname == "UCSD"):
         desP = ["Center for Energy Research", "Cancer Center"]
