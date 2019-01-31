@@ -2,11 +2,7 @@ from flask import Flask, render_template, request, redirect,url_for, make_respon
 from flask_assets import Environment, Bundle
 from flask_sitemap import Sitemap
 from datetime import datetime, timezone
-import pyrebase
-import requests
-import json
-import os
-
+import pyrebase, requests, json, os, uuid
 app = Flask(__name__)
 smp = Sitemap(app=app)
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS']=True
@@ -81,6 +77,12 @@ workdescriptions = jsonMD["design"]["workdescriptions"]
 
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
+
+#   Returns a token-identifier for the spam button... prevents automated bots from entering site
+
+def generateSpamToken():
+    return uuid.uuid4()
+
 def renderDB():
     messageBlogs,dateBlogs,titleBlogs,titleStripped = [],[],[],[]
     all_blogs = db.child("blogs").get()
@@ -166,7 +168,7 @@ def login():
             return req
         else:
             return render_template("admin.html",ERRORCODE="Invalid email or password.")
-            
+
 @app.route('/projects/<projectname>')
 def projects_id(projectname):
     if (projectname == "UCSD"):
