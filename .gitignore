@@ -1,3 +1,4 @@
 *.env
 *.json
 app/static/generated/all.css
+.travis.yml
