@@ -5,7 +5,7 @@ python:
 
 install:
   - pip install -r requirements.txt
-  - pip install pycrypto
+  - pip install pycryptodome==3.4.3
   - pip install pytest
 
 script:
