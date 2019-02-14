@@ -193,4 +193,7 @@ def pagenotfound(e):
     return render_template("404.html", name="404", description="There's nothing to see here.")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    if (os.environ.get("TEST", None) == None):
+        app.run(debug=True)
+    else:
+        print("Build succeeded for TRAVIS CI")
