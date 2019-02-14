@@ -19,7 +19,7 @@ config = {
 #   APIKey: Firebase authorization key
 #
 if (apiKey == None):
-    with open(r"app/static/js/config.json") as f:
+    with open(r"/app/static/js/config.json") as f:
         config = json.load(f)
 assets = Environment(app)
 assets.url = app.static_url_path
