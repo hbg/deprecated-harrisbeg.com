@@ -1,3 +1,4 @@
+{#
 <section class="card blogs blackandblue" id="blogs">
   {% for title in titles | reverse %}
   <div class="card--content black-text center modal-trigger" href="#{{strippedtitles[loop.index-1]}}" data-title="{{title}}" data-str-title="{{strippedtitles[loop.index-1]}}" data-message="{{messages[titles|length - loop.index] }}" data-date="{{dates[titles|length - loop.index] }}">
@@ -15,16 +16,36 @@
   {% endfor %}
 
 </section>
+#}
+<section class="black green-text padding-top-bottom">
+  <code>
+    ** ABOUT ME **<br/>
+    So what about me, then? Well, for starters, I'm a high-schooler (at time of writing) who has indulged in web development primarily, although my focus also diverts to other topics in accordance with what I'm working on. Sometimes, the ideas I come up with are spontaneous, but the strategy works (so far). In addition to programming, I love graphic design, hiking, and watching Star Wars.
+  </code>
+</section>
+<section class="info-bottom" >
+  <div>
+    <p class="green-text"><b>harrisbeg --help:</b> This site is currently under construction. Powered by <a>Flask</a> 
+      <i class="fab fa-linkedin right"></i>
+      <i class="fab fa-github right"></i>
+    </p>
+  </div>
+</section>
 
 <footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">
-                  <img src="{{ url_for('static', filename='assets/aurebesh.png') }}" class="center" height="40"/>
-
-                </h5>
-                <p class="grey-text text-lighten-4">"We seem to be made to suffer. It’s our lot in life." — C-3PO</p>
+                <code class="green-text">
+                    while (true) { <br/>
+                    <blockquote>
+                      try();<br>
+                      fail();<br/>
+                      learn(Something new)<br/>
+                    </blockquote>
+                  }<br/>
+                    java compilation error: 'new' is a reserved keyword
+                </code>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Contact</h5>
@@ -35,11 +56,6 @@
                   <li><a class="white-text" href="https://twitter.com/harrisb19"><i class="fab fa-twitter-square"></i>  Twitter</a></li>
                 </ul>
               </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-              <img src="{{ url_for('static', filename='assets/typewriter.gif') }}" class="center" height="30"/>
             </div>
           </div>
         </footer>

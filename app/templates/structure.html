@@ -1,134 +1,175 @@
 <!DOCTYPE html>
 <html ⚡>
+
 <head>
 
-	  	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-				<script async src="https://cdn.ampproject.org/v0.js"></script>
-				{% if request.path == "/example/1/2" %}
-				<script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
-				<link href='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
-				{% endif %}
-				<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
-				</style></noscript>
-				<title>Harris Beg | {{name}}</title>
-				<script type="application/ld+json">
-	      {
-	        "@context": "https://www.harrisbeg.com",
-	        "@type": "Portfolio",
-	        "headline": "Harris Beg's official portfolio website.",
-	        "datePublished": "2015-10-07T12:02:41Z",
-	        "image": [
-	          {{ url_for('static', filename='assets/android-chrome-512x512.png') }}
-	        ]
-	      }
-	    </script>
-	    	<meta name="theme-color" content="#000134">
-		  	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-			<meta name="description" content="{{ description }}"/>
-			<meta property="og:site_name" content="Harris Beg's Portfolio"/>
-			<meta property="og:title" content="{{ name }}"/>
-			<meta property="og:description" content = "{{ description }}"/>
-			<meta property="og:type" content="portfolio"/>
-			<meta name="keywords" content="Harris Beg,Harris,Beg,HarrisBeg,shadowcypher,Shadow Cypher,Developer,TechnologiCoders,UCSD,Grabify,0f346e5ccf2ddbcbbb96" />
-			<meta property="og:image" content="{{ url_for('static', filename='assets/android-chrome-512x512.png') }}">
-		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		  <link href="{{ url_for('static', filename='css/materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
-		  <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet" />
-		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-		  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-		  <script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
-			<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/apple-touch-icon.png') }}">
-			<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/favicon-32x32.png') }}">
-			<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/favicon-16x16.png') }}">
-			<link rel="manifest" href="{{ url_for('static', filename='assets/site.webmanifest') }}">
-			<link rel="mask-icon" href="{{ url_for('static', filename='assets/safari-pinned-tab.svg') }}" color="#5bbad5">
-			<meta name="msapplication-TileColor" content="#da532c">
-		  <script defer="defer" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
-			<script defer="defer" src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
-		  {# <script defer="defer" src="{{ url_for('static', filename='js/particles.js') }}"></script> #}
-		  <script defer="defer" src="{{ url_for('static', filename='js/rellax.js') }}"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    {% if request.path == "/superSpotter" %}
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' /> {% endif %}
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+        
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+    </style>
+    <noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <title>Harris Beg | {{name}}</title>
+    <script type="application/ld+json">
+        { "@context": "https://www.harrisbeg.com", "@type": "Portfolio", "headline": "Harris Beg's official portfolio website.", "datePublished": "2015-10-07T12:02:41Z", "image": [ {{ url_for('static', filename='assets/android-chrome-512x512.png') }} ] }
+    </script>
+    <meta name="theme-color" content="#000134">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:site_name" content="Harris Beg's Portfolio" />
+    <meta property="og:title" content="{{ name }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:type" content="portfolio" />
+    <meta name="keywords" content="Harris Beg,Harris,Beg,HarrisBeg,shadowcypher,Shadow Cypher,Developer,TechnologiCoders,UCSD,Grabify,0f346e5ccf2ddbcbbb96" />
+    <meta property="og:image" content="{{ url_for('static', filename='assets/android-chrome-512x512.png') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='assets/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='assets/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <script defer="defer" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    <script defer="defer" src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    {#
+    <script defer="defer" src="{{ url_for('static', filename='js/particles.js') }}"></script> #}
+    <script defer="defer" src="{{ url_for('static', filename='js/rellax.js') }}"></script>
 
-			<meta name="google-site-verification" content="M4NtSw5eYme7UjF2FoelaDL4-oc5n9nMtQPrGICANcc" />
-			<meta name="wot-verification" content="0f346e5ccf2ddbcbbb96"/>
-			<script>
-			$("#preloader").show();
-      		$("#content").hide();
-			console.log("Loading");
-			</script>
-				
+    <meta name="google-site-verification" content="M4NtSw5eYme7UjF2FoelaDL4-oc5n9nMtQPrGICANcc" />
+    <meta name="wot-verification" content="0f346e5ccf2ddbcbbb96" />
+    <script>
+        $("#preloader").show();
+        $("#content").hide();
+        console.log("Loading");
+    </script>
 
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
 
-		  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
-		  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-
-			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-			{% assets "scss_all" %}
-			        <link rel="stylesheet" href="{{ url_for('static', filename='generated/all.css') }}" type="text/css" />
-			{% endassets %}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% assets "scss_all" %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='generated/all.css') }}" type="text/css" /> {% endassets %}
 </head>
+
 <body>
-	<div id="preloader" style="background: white;">
-		<h1 style="color: black;">Loading...</h1>
-	</div>
-	<div id="content">
-		<nav class="fixed z-depth-0" id="nav">
-			<div class="nav-wrapper container">
-	      <a href="{{url_for('home')}}">
-					<img class="zoom" id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
-				</a>
+    <div id="preloader" style="background: white;">
+        <h1 style="color: black;">Loading...</h1>
+    </div>
+    <div id="content">
+        <nav class="fixed z-depth-0" id="nav">
+            <div class="nav-wrapper container">
+                <a href="{{url_for('home')}}">
+                    <img class="zoom" id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
+                </a>
 
+                <ul id="nav-mobile" class="sidenav">
+                    <li id="headerItemNav">
+                        <a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a>
+                    </li>
 
-	      <ul id="nav-mobile" class="sidenav">
-					<li id="headerItemNav"><a><img class="center" id="nav-header" src="{{ url_for('static', filename='assets/sc-transparent.png') }}" width="80"></a></li>
-
-	        <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
-	        <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
-					<li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
-					<li><a href="{{url_for('design')}}" class="white-text">Design</a></li>
-					<li>
-							<a class="light"><i class="fab fa-linkedin white-text" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
-							<a class="light" href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square white-text"></i></a>
-							<a class="light"><i class="fab fa-twitter-square white-text" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
-					</li>
-	      </ul>
-	      <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
-	    </div>
-		</nav>
-		<div class="scrollable">
-		<div class="mdiv">
-			<img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2"/>
-		</div>
-		<div id="txt-nm-div">
-			<h3 id="nm-text" class="animated fadeInUp">HARRIS BEG
+                    <li><a href="{{url_for('home')}}" class="white-text">Home</a></li>
+                    <li><a href="{{url_for('about')}}" class="white-text">About</a></li>
+                    <li><a href="{{url_for('projects')}}" class="white-text">Projects</a></li>
+                    <li><a href="{{url_for('design')}}" class="white-text">Design</a></li>
+                    <li>
+                        <a class="light"><i class="fab fa-linkedin white-text" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
+                        <a class="light" href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square white-text"></i></a>
+                        <a class="light"><i class="fab fa-twitter-square white-text" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
+                    </li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large right"><i class="material-icons white-text">menu</i></a>
+            </div>
+        </nav>
+        <div class="scrollable">
+            <div class="mdiv">
+                <img src="{{ url_for('static', filename='assets/sc-transparent.png') }}" class="logo rellax" data-rellax-speed="2" />
+            </div>
+            <div id="txt-nm-div">
+                <h3 id="nm-text" class="animated fadeInUp">HARRIS BEG
 				{% if (name !="Home") %}
 				| {{name.upper()}}
 				{% endif %}
 			</h3>
-		</div>
-	</div>
-	      {% block content %}
-	      {% endblock %}
-</div>
-<div class="fixed-action-btn">
-	<a class="waves-effect waves-light btn-floating btn-large black" href="">
-		<i class="large material-icons theme-color">insert_drive_file</i>
-	</a>
-	<a class="waves-effect waves-light btn-floating btn-large black" target="_blank" href="https://linkedin.com/in/harrisbegcca/">
-		<i class="fab fa-linkedin theme-color"></i>
-	</a>
-	<a class="waves-effect waves-light btn-floating btn-large black" href="mailto:harris@harrisbeg.com">
-		<i class="large material-icons theme-color">email</i>
-	</a>
-</div>
-<script>
-$("#content").show();
-$("#preloader").hide();
-console.log("Loading");
-</script>
-			{% extends "footer.html" %}
+            </div>
+        </div>
+        {% block content %} {% endblock %}
+    </div>
+    <script>
+        $("#content").show();
+        $("#preloader").hide();
+        console.log("Loading");
+    </script>
+    {% extends "footer.html" %}
 
-
-<script src="//instant.page/1.1.0" type="module" integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"></script>
+    <script src="//instant.page/1.1.0" type="module" integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"></script>
 </body>
+
 </html>

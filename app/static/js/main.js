@@ -4,8 +4,6 @@ $(document).on('ready', function() {
 
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
-	$('.fixed-action-btn').floatingActionButton();
-
 	if (hr < 12) {
 		/**
 		 *	background: #8E2DE2;
