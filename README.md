@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/harrisbegca/harrisbeg.com.svg?token=jyHwaESN3WGzDqzCynqg&branch=master)](https://travis-ci.com/harrisbegca/harrisbeg.com)  
 ![](https://img.shields.io/pypi/pyversions/Django.svg?style=flat)  
 ![](https://img.shields.io/badge/flask-1.0.2-blue.svg)  
-![Homepage](https://i.ibb.co/L5XYHyT/imgbb.jpg)
+![Homepage](https://i.gyazo.com/c7faa8dba25788ed4283c567ddec5850.png)
 
 ## Python Dependencies
 
@@ -18,3 +18,5 @@
 * wow.js
 * rellax.js
 * jquery
+
+## Estimated Completion Date: April 1, 2019
