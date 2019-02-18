@@ -11,6 +11,22 @@ from flask_assets import Environment
 from flask_sitemap import Sitemap
 from webassets import Bundle
 
+
+class Reader:
+    variables: Type[dict]
+
+    def __init__(self, path):
+        self.variables = dict()
+        with open(path) as f:
+            for line in f:
+                key = line.split("=")[0].strip()
+                value = line.split("=")[1].strip()
+                self.variables.__setitem__(key, value)
+
+    def get_keypair(self):
+        return self.variables
+
+
 app = Flask(__name__)
 smp = Sitemap(app=app)
 app.config['SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS'] = True
@@ -28,7 +44,7 @@ config = {
 #   APIKey: Firebase authorization key
 #
 if apiKey is None:
-    with open(r"app/static/js/config.json") as f:
+    with open(r"app/static/js/config.json") as f:  # --> Use .env in the future
         config = json.load(f)
 assets = Environment(app)
 scss: Bundle = Bundle('design.scss', 'about.scss', '404.scss', '_main.scss', 'contact.scss', 'projects.scss', "index.scss", filters='pyscss', output='generated/all.css')
