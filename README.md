@@ -18,3 +18,5 @@
 * wow.js
 * rellax.js
 * jquery
+
+## Estimated Completion Date: April 1, 2019
