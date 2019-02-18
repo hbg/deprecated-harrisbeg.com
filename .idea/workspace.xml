@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2021e77f-f160-4b2b-a8f0-59c4eb45d1cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/android-chrome-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/android-chrome-512x512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/browserconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/mstile-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/mstile-150x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/safari-pinned-tab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/safari-pinned-tab.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/.webassets-cache/7400e0896e295ea249a3ac82447e9f93" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/.webassets-cache/7400e0896e295ea249a3ac82447e9f93" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/structure.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/structure.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,10 +37,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="654">
               <caret line="172" column="18" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -55,10 +50,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/index.scss">
+        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="-629">
+              <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -66,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/structure.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="158" column="27" lean-forward="true" selection-start-line="158" selection-start-column="27" selection-end-line="158" selection-end-column="27" />
+            <state relative-caret-position="161">
+              <caret line="132" column="50" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -75,17 +70,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="255">
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/static/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="20" selection-end-column="8" />
+            <state relative-caret-position="169">
+              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -118,7 +113,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>token</find>
+      <find>html</find>
+      <find>p</find>
+      <find>p {</find>
+      <find>roll-cell</find>
       <find>works</find>
+      <find>sidenav</find>
+      <find>navmo</find>
+      <find>nav</find>
+      <find>nav-m</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,17 +132,18 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/site_settings.json" />
-        <option value="$PROJECT_DIR$/app/templates/footer.html" />
         <option value="$PROJECT_DIR$/app/__main__.py" />
-        <option value="$PROJECT_DIR$/app/static/index.scss" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/static/js/main.js" />
+        <option value="$PROJECT_DIR$/app/templates/footer.html" />
         <option value="$PROJECT_DIR$/app/templates/structure.html" />
+        <option value="$PROJECT_DIR$/app/static/index.scss" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-183" />
-    <option name="y" value="-30" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="27" />
+    <option name="y" value="-11" />
     <option name="width" value="1946" />
     <option name="height" value="1106" />
   </component>
@@ -227,15 +231,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550372144389</updated>
-      <workItem from="1550372147596" duration="5757000" />
+      <workItem from="1550372147596" duration="9582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5757000" />
+    <option name="totallyTimeSpent" value="9582000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -305,44 +309,60 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b81e4701-2010-4066-8d76-6a0ebb6da3db/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/assets/browserconfig.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/structure.html">
+    <entry file="file://$PROJECT_DIR$/app/static/js/wow.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="158" column="27" lean-forward="true" selection-start-line="158" selection-start-column="27" selection-end-line="158" selection-end-column="27" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
+        <state relative-caret-position="654">
           <caret line="172" column="18" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="192" selection-start-line="27" selection-start-column="192" selection-end-line="27" selection-end-column="192" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/structure.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="132" column="50" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>

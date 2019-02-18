@@ -1,20 +1,17 @@
-
 $(document).on('ready', function() {
-
-
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
 	if (hr < 12) {
 		/**
 		 *	background: #8E2DE2;
-		 *  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+		 *  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); <-- Old Gradient
 		 *  background: linear-gradient(to right, #4A00E0, #8E2DE2);
 		 **/
 		$('body').css("background","-webkit-linear-gradient(to right, #fc466b, #3f5efb)");
 		$('body').css("background","linear-gradient(to right, #fc466b, #3f5efb)");
 		$('html').css("background","-webkit-linear-gradient(to right, #fc466b, #3f5efb)");
 		$('html').css("background","linear-gradient(to right, #fc466b, #3f5efb)");
-		color('#3f5efb');
+		color(0);
 
 	}
 	else if (hr < 18) {
@@ -22,7 +19,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right, #dc2430, #7b4397)");
 		$('html').css("background","-webkit-linear-gradient(to right, #dc2430, #7b4397)");
 		$('html').css("background","linear-gradient(to right, #dc2430, #7b4397)");
-		color('#7b4397');
+		color(1);
 
 	}
 	else {
@@ -30,9 +27,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right,  #ee0979, #ff6a00)");
 		$('html').css("background","-webkit-linear-gradient(to right, #ee0979, #ff6a00)");
 		$('html').css("background","linear-gradient(to right, #ee0979, #ff6a00)");
-		color('#ff6a00');
-
-
+		color(2);
 	}
 	$('.sidenav').sidenav();
 	$('.tooltipped').tooltip();
@@ -42,41 +37,41 @@ $(document).on('ready', function() {
     $('#'+(this).attr("data-str-title")).modal();
 	});
 	var geojson = {
-  type: 'FeatureCollection',
-  features: [{
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-117.1611,32.7157]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'Washington, D.C.'
-    }
-  },
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-122.414, 37.776]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'San Francisco, California'
-    }
-  }]
-};
-geojson.features.forEach(function(marker) {
+	  type: 'FeatureCollection',
+	  features: [{
+		type: 'Feature',
+		geometry: {
+		  type: 'Point',
+		  coordinates: [-117.1611,32.7157]
+		},
+		properties: {
+		  title: 'Mapbox',
+		  description: 'Washington, D.C.'
+		}
+	  },
+	  {
+		type: 'Feature',
+		geometry: {
+		  type: 'Point',
+		  coordinates: [-122.414, 37.776]
+		},
+		properties: {
+		  title: 'Mapbox',
+		  description: 'San Francisco, California'
+		}
+	  }]
+	};
+	geojson.features.forEach(function(marker) {
 
-  // create a HTML element for each feature
-  var el = document.createElement('div');
-  el.className = 'marker';
+  	// create a HTML element for each feature
+  	var el = document.createElement('div');
+  	el.className = 'marker';
 
-  // make a marker for each feature and add to the map
-  new mapboxgl.Marker(el)
-  .setLngLat(marker.geometry.coordinates)
-  .addTo(map);
-});
+  	// make a marker for each feature and add to the map
+  	new mapboxgl.Marker(el)
+  	.setLngLat(marker.geometry.coordinates)
+  	.addTo(map);
+	});
 	new WOW({
 		                      boxClass:     'wow',      // default
 		                      animateClass: 'animated', // default
@@ -84,13 +79,11 @@ geojson.features.forEach(function(marker) {
 		                      mobile:       true,       // default
 		                      live:         true        // default
 	}).init();
-
 });
 
-
 /**
- * @param  {String}
- * @return {void}
+ * @param c Time of day {0,1,2}
+ * @return Theme color changed
  */
 function color(c) {
     //	var theme = document.querySelector("meta[name=theme-color]");
@@ -98,7 +91,19 @@ function color(c) {
 
 		let elements = document.getElementsByClassName("theme-color");
 		for (let i = 0; i < elements.length; i++) {
-			elements[i].style.color=c;
+			switch (c) {
+				case 0:
+					$(elements[i]).css("background", "-webkit-linear-gradient(left, #fc466b, #3f5efb)");
+					break;
+				case 1:
+					$(elements[i]).css("background", "-webkit-linear-gradient(left, #dc2430, #7b4397)");
+					break;
+				case 2:
+					$(elements[i]).css("background", "-webkit-linear-gradient(left, #ee0979, #ff6a00)");
+					break;
+			}
+  			$(elements[i]).css("-webkit-background-clip", "text");
+  			$(elements[i]).css("-webkit-text-fill-color","transparent");
 
 		}
 

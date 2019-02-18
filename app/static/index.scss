@@ -12,7 +12,7 @@ blockquote {
   padding: 20px;
 }
 #nav-mobile {
-  background: #000134;
+  background: black;
 }
 #nav{
   background:rgba(255, 255, 255, 0.2);
@@ -27,6 +27,9 @@ tr {
   }
   #experience {
     min-height: 500px !important;
+  }
+  .info-bottom {
+    height: 75px !important;
   }
 }
 #nm-text {
@@ -139,7 +142,7 @@ tr {
 }
 .light {
   font-family: 'Work Sans';
-  font-weight: light;
+  font-weight: 200;
 }
 .medium-thicc {
   font-family: 'Work Sans';
@@ -163,7 +166,7 @@ tr {
     input {
       border-bottom: none !important;
       font-family: 'Work Sans';
-      font-weight: light;
+      font-weight: 200;
       margin: 0px;
     }
     label {
@@ -186,6 +189,10 @@ html {
 #map {
   margin: auto !important;
   display: block;
+}
+.subtext {
+  font-size: 1rem;
+  white-space: pre-line;
 }
 .marker {
   background-size: cover;
