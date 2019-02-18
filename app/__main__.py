@@ -1,9 +1,14 @@
-from typing import Type
-from flask import Flask, render_template, request, redirect,url_for, make_response
-from flask_assets import Environment, Bundle
-from flask_sitemap import Sitemap
 from datetime import datetime, timezone
-import pyrebase, requests, json, os, uuid
+from typing import Type
+
+import json
+import os
+import pyrebase
+import requests
+import uuid
+from flask import Flask, render_template, request, redirect, make_response
+from flask_assets import Environment
+from flask_sitemap import Sitemap
 from webassets import Bundle
 
 app = Flask(__name__)
@@ -37,25 +42,19 @@ message_blogs: Type[list]
 date_blogs: Type[list]
 title_stripped: Type[list]
 title_blogs: Type[list]
-#
-#   Site 'structure' of sorts
-#
+
+
 with open("app/site_settings.json") as f:
     jsonMD = json.load(f)
 
-works = jsonMD["design"]['titles']
-workdescriptions = jsonMD["design"]["workdescriptions"]
-
-#   Initialize Firebase DB (Will use MongoDB soon)
 
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
-#   Returns a token-identifier for the spam button... prevents automated bots from entering site
-
 
 def generateSpamToken():
     return uuid.uuid4()
+
 
 def getDescription(page_name):
     return jsonMD[page_name]["description"]
@@ -121,7 +120,7 @@ def post_message():
 
 @app.route('/design/')
 def design():
-    return render_template("design.html", name="Design", works=works, workdescriptions=workdescriptions,description=getDescription("Design"))
+    return render_template("design.html", name="Design", works=jsonMD["Design"]['titles'], workdescriptions=jsonMD["Design"]["workdescriptions"],description=getDescription("Design"))
 
 
 @app.route('/projects/')

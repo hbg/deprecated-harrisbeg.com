@@ -1,9 +1,4 @@
 {
-        "design": {
-            "titles": ["App Dev","TechnologiCoders","Linker","Mustafar","Royal Guard","Hypercharged"],
-            "workdescriptions": ["The logo for the App Development club was conceived by myself after thinking of how to combine Canyon Crest Academy's Spirit colors, its very own Raven, and imagery that very clearly depicts the purpose of the club.", "While the primary objective of TechnologiCoders was to primarily focus on hardware, creating a website with a logo enforcing an image of creativity would likely attract more sponsors.", "An impromptu creation, 'Linker' was an app designed to link mobile phones to computers - a link very clearly seen in the logo itself.", "A planet in Star Wars hosting Darth Vader's own castle.","A royal guard from the Star Wars original trilogy.","Just like our content and quality, the Hypercharged logo is straight to the point and direct - both in styling and meaning."]
-
-        },
         "Home": {
             "description": "A developer with no bounds, I have explored many languages and APIs, roamed through different jobs, and attempted to solve things myself for hours on end."
         },
@@ -11,6 +6,8 @@
             "description" : "About"
         },
         "Design": {
+            "titles": ["App Dev","TechnologiCoders","Linker","Mustafar","Royal Guard","Hypercharged"],
+            "workdescriptions": ["The logo for the App Development club was conceived by myself after thinking of how to combine Canyon Crest Academy's Spirit colors, its very own Raven, and imagery that very clearly depicts the purpose of the club.", "While the primary objective of TechnologiCoders was to primarily focus on hardware, creating a website with a logo enforcing an image of creativity would likely attract more sponsors.", "An impromptu creation, 'Linker' was an app designed to link mobile phones to computers - a link very clearly seen in the logo itself.", "A planet in Star Wars hosting Darth Vader's own castle.","A royal guard from the Star Wars original trilogy.","Just like our content and quality, the Hypercharged logo is straight to the point and direct - both in styling and meaning."],
             "description" : "Design"
         },
         "Blog": {
@@ -26,11 +23,9 @@
             },
             "MSH": {
                 "images" : ["msh.png"]
-
             },
             "UCSD": {
                 "images" : ["cer.png","mcc.png"]
-
             }
         }
     }
