@@ -59,7 +59,6 @@ date_blogs: Type[list]
 title_stripped: Type[list]
 title_blogs: Type[list]
 
-
 with open("app/site_settings.json") as f:
     jsonMD = json.load(f)
 
