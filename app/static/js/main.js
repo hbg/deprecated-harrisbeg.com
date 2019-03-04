@@ -1,3 +1,4 @@
+original = document.title;
 $(document).on('ready', function() {
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
@@ -106,5 +107,12 @@ function color(c) {
   			$(elements[i]).css("-webkit-text-fill-color","transparent");
 
 		}
-
 }
+
+$(window).focus(function() {
+    document.title = original;
+});
+
+$(window).blur(function() {
+    document.title = "Please don't leave...";
+});

@@ -10,6 +10,8 @@
         <meta property="og:title" content="{{ name }}"/>
         <meta property="og:description" content = "{{ description }}"/>
         <meta property="og:type" content="portfolio"/>
+      <link href="{{ url_for('static', filename='css/materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+
         {% assets "scss_all" %}
           <link rel="stylesheet" href="{{ url_for('static', filename='generated/all.css') }}" type="text/css" />
   			{% endassets %}
@@ -17,7 +19,7 @@
   </head>
   <body class="rip-image" height="100%">
     <div class="mdiv">
-    <h3 id="nm-text" class="animated fadeInUp">Why does everyone want to <a href="javascript:history.back()">go back</a> to Jakku?</h3>
-    </div>
+    <h1 class="animated fadeInUp black white-text rounded round">Why does everyone want to <a href="javascript:history.back()">go back</a> to Jakku?</h1>
+    </h1>
   </body>
 </html>
