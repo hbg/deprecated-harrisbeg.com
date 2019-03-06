@@ -18,6 +18,20 @@ blockquote {
   background:rgba(255, 255, 255, 0.2);
   border-radius: 0px 0px 15px 15px;
 }
+#desktop-pages {
+  background-color: rgba(255,255,255, 0.1);
+  border-radius: 20px;
+}
+.page-item:hover {
+  background: white !important;
+}
+.page-item {
+  border-radius: 20px !important;
+  a:hover {
+    border-radius: 20px !important;
+    color: mediumpurple !important;
+  }
+}
 .segment-c:hover {
   background: rgb(63, 63, 63, 0.5);
   border-radius: 10px;

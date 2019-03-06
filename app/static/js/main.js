@@ -2,6 +2,7 @@ original = document.title;
 $(document).on('ready', function() {
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
+	var sw = 0;
 	if (hr < 12) {
 		/**
 		 *	background: #8E2DE2;
@@ -12,6 +13,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right, #fc466b, #3f5efb)");
 		$('html').css("background","-webkit-linear-gradient(to right, #fc466b, #3f5efb)");
 		$('html').css("background","linear-gradient(to right, #fc466b, #3f5efb)");
+		sw = 0;
 		color(0);
 
 	}
@@ -20,6 +22,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right, #dc2430, #7b4397)");
 		$('html').css("background","-webkit-linear-gradient(to right, #dc2430, #7b4397)");
 		$('html').css("background","linear-gradient(to right, #dc2430, #7b4397)");
+		sw = 1;
 		color(1);
 
 	}
@@ -28,6 +31,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right,  #ee0979, #ff6a00)");
 		$('html').css("background","-webkit-linear-gradient(to right, #ee0979, #ff6a00)");
 		$('html').css("background","linear-gradient(to right, #ee0979, #ff6a00)");
+		sw = 2;
 		color(2);
 	}
 	$('.sidenav').sidenav();
