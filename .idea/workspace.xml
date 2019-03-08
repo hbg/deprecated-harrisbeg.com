@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="64">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#stop#0;n#linearGradient#0;n#svg#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#stop#1;n#linearGradient#0;n#svg#0;n#!!top" expanded="true" />
@@ -303,12 +303,12 @@
       <workItem from="1552025088395" duration="1261000" />
       <workItem from="1552058070648" duration="880000" />
       <workItem from="1552071800824" duration="371000" />
-      <workItem from="1552077068116" duration="1710000" />
+      <workItem from="1552077068116" duration="1808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34370000" />
+    <option name="totallyTimeSpent" value="34468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -474,8 +474,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        <state relative-caret-position="64">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#stop#0;n#linearGradient#0;n#svg#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#stop#1;n#linearGradient#0;n#svg#0;n#!!top" expanded="true" />
