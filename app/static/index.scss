@@ -6,7 +6,7 @@ blockquote {
       border-left: 5px solid red !important;
 }
 .background-theme {
-      background-image: linear-gradient(to left, rgb(220,36,48, 1), rgb(123,67,151, 1)) !important;
+  background: linear-gradient(to right, rgb(220,36,48, 1), rgb(123,67,151, 1)) !important;
 }
 .divider {
   border: 0px !important;
@@ -25,8 +25,11 @@ blockquote {
 .footer-icon {
   font-size: 24px;
 }
+footer {
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='1920px' height='1080px' viewBox='0 0 1920 1080' enable-background='new 0 0 1920 1080' xml:space='preserve'%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='0' y1='745.5' x2='1920' y2='745.5'%3E%3Cstop offset='0' style='stop-color:%23DC2530'/%3E%3Cstop offset='1' style='stop-color:%237B4396'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23SVGID_1_)' d='M1920,1080H0V606c0,0,360.75,202.5,773.25,201.25S1560.5,413.5,1920,411'/%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A") !important;
+}
 #desktop-pages {
-    background-image: linear-gradient(to left, rgb(220,36,48, 0.4), rgb(123,67,151, 0.4)) !important;
+    background-image: linear-gradient(to right, rgb(220,36,48, 0.4), rgb(123,67,151, 0.4)) !important;
   border-radius: 20px;
 }
 .page-item:hover {
@@ -50,11 +53,19 @@ tr {
     #what-i-do {
     //min-height: 900px !important;
   }
+  .page-footer {
+    margin-top: -50px !important;
+  }
   #experience {
-    min-height: 500px !important;
+    min-height: 550px !important;
   }
   .info-bottom {
     height: 75px !important;
+  }
+}
+@media screen and (min-width: 651px) {
+  .page-footer {
+    margin-top: -100px !important;
   }
 }
 #nm-text {
@@ -119,9 +130,7 @@ tr {
     padding: 0px 10px !important;
   }
 }
-.padding-top-bottom {
-    padding: 15px 0px !important;
-  }
+
 #loginFormBody {
   background: #833ab4;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
