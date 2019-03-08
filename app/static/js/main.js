@@ -43,6 +43,7 @@ $(document).on('ready', function() {
 		var content = '<div class="modal-content"><h1>'+$(this).attr("data-title")+'</h1><p>'+$(this).attr("data-message")+'</p><p class="grey-text lighten-2">'+$(this).attr("data-date")+'</p></div>';
     $('#'+(this).attr("data-str-title")).html(content);
     $('#'+(this).attr("data-str-title")).modal();
+
 	});
 	var geojson = {
 	  type: 'FeatureCollection',
