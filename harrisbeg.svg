@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="34.4146" y1="103.6667" x2="221.5854" y2="103.6667">
+	<stop  offset="0" style="stop-color:#DC2530"/>
+	<stop  offset="1" style="stop-color:#7B4396"/>
+</linearGradient>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" stroke="#CCCCCC" stroke-width="5" stroke-miterlimit="10" points="
+	174.875,184.667 81.29,184.762 34.415,103.762 81.125,22.667 174.71,22.572 221.585,103.572 "/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M70.186,147.634V67.197l27.146,35.392l27.251-35.392h33.139
+	c0,0,25.121-0.495,25.864,18.81c0.742,19.305-13.86,20.419-13.86,20.419s15.964,3.094,16.088,17.944s-8.786,24.134-37.868,23.019
+	c-29.081-1.115-23.364,0-23.364,0l-27.249-35.147L70.186,147.634z"/>
+<text transform="matrix(1 0 0 1 37.6667 231.6667)" fill="#E0013F" font-family="'ProductSans-Regular'" font-size="40">Harris Beg</text>
+</svg>

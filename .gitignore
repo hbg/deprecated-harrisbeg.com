@@ -3,3 +3,4 @@
 app/static/generated/all.css
 .travis.yml
 !site_settings.json
+app/static/assets/adgraphic.png
