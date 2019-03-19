@@ -1,6 +1,7 @@
 <p align="center">
     <img src="https://github.com/harrisbegca/harrisbeg.com/blob/master/harrisbeg.svg"><br/>
 </p>
+
 ## A Flask-Based Site utilizing SCSS, Python utilities, and JS Libraries  
 [![Build Status](https://travis-ci.com/harrisbegca/harrisbeg.com.svg?token=jyHwaESN3WGzDqzCynqg&branch=master)](https://travis-ci.com/harrisbegca/harrisbeg.com)  
 ![](https://img.shields.io/pypi/pyversions/Django.svg?style=flat)  
