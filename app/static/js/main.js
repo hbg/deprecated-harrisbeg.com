@@ -1,6 +1,6 @@
 original = document.title;
 $(document).on('ready', function() {
-	$('#splash-screen').fadeOut();
+	$('#splash-screen').fadeOut().delay(1);
 	var rellax = new Rellax('.rellax');
 	var hr = new Date().getHours();
 	var sw = 0;
