@@ -120,6 +120,12 @@
 </head>
 
 <body>
+    <div id="splash-screen" class="black">
+      <div class="progress">
+          <div class="indeterminate" style="margin-top: 90vh !important;"></div>
+      </div>
+
+    </div>
     <div id="preloader" class="white">
         <h1 class="black-text">Loading...</h1> <!--Fix this & add content-->
     </div>
@@ -222,8 +228,8 @@
     <script>
         $("#content").show();
         $("#preloader").hide();
-        console.log("Loading");
     </script>
+
     {% extends "footer.html" %}
 
     <script src="//instant.page/1.1.0" type="module" integrity="sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"></script>
