@@ -72,7 +72,7 @@ $(document).on('ready', function() {
 	  }]
 	};
 	geojson.features.forEach(function(marker) {
-
+	//	counter($(".counter"), 6);
   	// create a HTML element for each feature
   	var el = document.createElement('div');
   	el.className = 'marker';

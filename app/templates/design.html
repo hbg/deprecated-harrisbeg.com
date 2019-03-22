@@ -4,10 +4,10 @@
   <div class="big">
     {% for item in works %}
         <div class="row flexible">
-          <div class="col s6 white card animation-target">
+          <div class="col s6 background-theme round card animation-target">
             <div class="card-content">
               <h2>
-                {{works[loop.index-1]}}
+                <b>{{works[loop.index-1]}}</b>
                 </h2>
                 <p class="flow-text">
                   {{workdescriptions[loop.index-1]}}

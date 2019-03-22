@@ -3,7 +3,7 @@
     <img src="https://travis-ci.com/harrisbegca/harrisbeg.com.svg?token=jyHwaESN3WGzDqzCynqg&branch=master">  
     <img src="https://img.shields.io/pypi/pyversions/Django.svg?style=flat">
     <img src="https://img.shields.io/badge/flask-1.0.2-blue.svg">
-    <img src="https://i.gyazo.com/c7faa8dba25788ed4283c567ddec5850.png">
+    <img src="https://i.ibb.co/9W49Wmh/image.png">
 </p>
 
 A Flask-Based Site utilizing SCSS, Python utilities, and JS Libraries  
