@@ -1,12 +1,15 @@
 {% extends "structure.html" %}
 {% block content %}
-
+<div class="container">
   <div class="big">
     {% for item in works %}
         <div class="row flexible">
-          <div class="col s6 background-theme round card animation-target">
+          <div class="col s12 background-theme round card animation-target">
+              <div class="card-image">
+              <img src="{{ url_for('static', filename='assets/designs/designs'+(loop.index)|string+'.png') }}" class="center-block" style="max-height: 200px !important; width: auto !important; margin-top: 20px;"/>
+              </div>
             <div class="card-content">
-              <h2>
+              <h2 class="flow-text">
                 <b>{{works[loop.index-1]}}</b>
                 </h2>
                 <p class="flow-text">
@@ -14,16 +17,10 @@
                   </p>
               </div>
             </div>
-
-          <div class="col s6 transparent card">
-            <div class="card-image">
-              <amp-img src="{{ url_for('static', filename='assets/designs/designs'+(loop.index)|string+'.png') }}" class="design-image z-depth-2" height="150" width="150" layout="fixed"/>
-              </div>
         </div>
-        </div>
-
 
 
     {% endfor %}
+        </div>
     </div>
   {% endblock %}
