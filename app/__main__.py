@@ -3,9 +3,9 @@ from typing import Type
 
 import json
 import os
-import pyrebase
+import pyrebase  # Theoretically don't need this anymore
 import requests
-import uuid
+import uuid  # Or even this
 from flask import Flask, render_template, request, redirect, make_response
 from flask_assets import Environment
 from flask_sitemap import Sitemap
@@ -99,7 +99,7 @@ def user_login(email, password):
     if result.ok:  # Crappy system but it'll do
         return json_result
     else:
-        return result.content
+        return "Error"
 
 
 @app.route('/superSpotter/')
@@ -159,7 +159,7 @@ def admin_panel():
 def login():
         login_activity = user_login(request.form['email'], request.form['password'])
         print(str(login_activity))
-        if login_activity != "Error": # Pt.2 of crappy system, but it'll do
+        if login_activity != "Error":  # Pt.2 of crappy system, but it'll do
             token = login_activity["idToken"]
             req = make_response(redirect("/adminpanel?email="+request.form['email']+"&id="+token[:9]))
             if not request.cookies.get('id'):
@@ -173,11 +173,17 @@ def login():
 def projects_id(projectname):
     if projectname == "UCSD":
         desP = ["Center for Energy Research", "Cancer Center"]  # what is desP supposed to mean? idk
-        detail = ["At the Center for Energy Research and the University of San Diego, California, I attempted to find optimal computer vision settings (with OpenCV) for detecting the sun to aid the solar panels at UCSD. Much of this internship required optical and machine-learning-oriented knowledge.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF). These mutation annotation format files, then, can be used to identify patterns in mutations within specific cancer types."]
+        detail = ["""
+                  At the Center for Energy Research and the University of San Diego, California, I attempted to find optimal computer vision settings
+                  (with OpenCV) for detecting the sun to aid the solar panels at UCSD. Much of this internship required optical and machine-learning-oriented knowledge.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF). These mutation annotation format files, then, can be used to identify patterns in mutations within specific cancer types.
+                  """]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
     elif projectname == "skinCAM":
         desP = ["skinCAM"]
-        detail = ["A child of my imagination, skinCAM, a patent-pending app, was created to allow for public access to dermatologic resources. By utilizing machine learning, skinCAM accurately detects many skin diseases - all for the price of, well, nil."]
+        detail = ["""
+            A child of my imagination, skinCAM, a patent-pending app, was created to allow for public access to dermatologic resources.
+            By utilizing machine learning, skinCAM accurately detects many skin diseases - all for the price of, well, nil.
+                 """]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
     elif projectname == "MSH":
         desP = ["MySocialHub"]
