@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ⚡>
-
+{% from "logo.html" import logo with context %}
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -135,12 +135,12 @@
          <div class="nav-wrapper container" style="width: 90% !important;">
 
              <a href="{{url_for('home')}}">
-                 <img class="zoom animated fadeIn" id="nav-logo" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="40" height="40">
+{{ logo(60, 60) }}
              </a>
 
              <ul id="nav-mobile" class="sidenav">
                  <li id="headerItemNav">
-                     <a><img class="center fadeIn animated" id="nav-header" src="{{ url_for('static', filename='assets/hb-lg.png') }}" width="80"></a>
+                     {{ logo(60, 60) }}
                  </li>
 
                  <li><a href="{{url_for('home')}}" class="theme-color"><code>Home</code></a></li>
@@ -164,58 +164,7 @@
      </nav>
         <div class="scrollable">
             <div class="mdiv">
-                <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px"
-	 height="100px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" class="logo rellax  animated fadeInUp" data-rellax-speed="2">
-                    <g id="Layer_7" display="none">
-                        <rect display="inline" stroke="#000000" stroke-miterlimit="10" width="512" height="512"/>
-                    </g>
-                    <g id="H" display="none">
-
-                            <text transform="matrix(1.0019 0 0 1 -20.9401 425.5062)" display="inline" fill="#FFFFFF" font-family="'WorkSans-Thin'" font-size="489.472">H</text>
-                    </g>
-                    <g id="B" display="none">
-
-                            <text transform="matrix(0.9984 0 0 1 204.5826 425.5066)" display="inline" fill="#FFFFFF" font-family="'WorkSans-Medium'" font-size="490.9091">B</text>
-                    </g>
-                    <g id="Polygon_1_1_" display="none" enable-background="new    ">
-                        <g id="Polygon_1" display="inline">
-                            <g>
-                                <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="32.82,102.467 32.82,425.515 157.536,263.991 			"/>
-                            </g>
-                        </g>
-                    </g>
-                    <g id="Polygon_1_copy_1_" display="none" enable-background="new    ">
-                        <g id="Polygon_1_copy" display="inline">
-                            <g>
-                                <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="127.889,263.991 252.605,425.515 252.605,102.467
-                                    "/>
-                            </g>
-                        </g>
-                    </g>
-                    <g id="Rectangle_1_1_" display="none" enable-background="new    ">
-                        <g id="Rectangle_1" display="inline">
-                            <g>
-                                <rect x="302.442" y="129.025" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="135.91" height="113.278"/>
-                            </g>
-                        </g>
-                    </g>
-                    <g id="Rectangle_2_1_" display="none" enable-background="new    ">
-                        <g id="Rectangle_2" display="inline">
-                            <g>
-                                <rect x="296.837" y="274.468" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="168.136" height="124.466"/>
-                            </g>
-                        </g>
-                    </g>
-                    <g id="Layer_8">
-                        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="32.8204" y1="263.9976" x2="500.0051" y2="263.9976">
-                            <stop offset="0" style="stop-color:#DC2430"/>
-                            <stop offset="1" style="stop-color:#7B4397"/>
-                        </linearGradient>
-                        <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" d="M32.82,426.5v-325l109.68,143l110.105-143H386.5
-                            c0,0,101.5-2,104.5,76S435,260,435,260s64.5,12.5,65,72.5s-35.5,97.513-153,93.007c-117.5-4.507-94.401,0-94.401,0L142.5,283.5
-                            L32.82,426.5z"/>
-                    </g>
-                </svg>
+                {{ logo(100, 100) }}
             </div>
             <div id="txt-nm-div" class="round black">
                 <h3 id="nm-text" class="theme-color animated fadeInUp">HARRIS BEG
