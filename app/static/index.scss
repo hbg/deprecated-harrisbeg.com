@@ -160,6 +160,9 @@ tr{
     margin-left:10%;
     margin-right:10%
 }
+.bold {
+    font-family:'Titillium Web';
+}
 table,td{
     margin:0 auto;
 }
@@ -176,8 +179,6 @@ td{
 }
 .backdrop{
     background-color:#ff5400
-}
-h4{
 }
 .light-text{
     font-family:'Work Sans'
@@ -286,9 +287,6 @@ footer {
      border: none !important;
 }
  @media screen and (max-width: 650px) {
-     #what-i-do {
-         //min-height: 900px !important;
-    }
      .page-footer {
          margin-top: -50px !important;
     }

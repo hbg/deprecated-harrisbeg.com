@@ -21,7 +21,7 @@ $(document).on('ready', function() {
 		$('body').css("background","linear-gradient(to right, #dc2430, #7b4397)");
 		$('html').css("background","-webkit-linear-gradient(to right, #dc2430, #7b4397)");
 		*/
-		$('.roll-cell').css("background","linear-gradient(to right, #dc2430, #7b4397)");
+		//$('.roll-cell').css("background","linear-gradient(to right, #dc2430, #7b4397)");
 		sw = 1;
 		color(1);
 
