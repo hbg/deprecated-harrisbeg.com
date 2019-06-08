@@ -101,18 +101,18 @@ def user_login(email, password):
     else:
         return "Error"
 
-
+r"""
 @app.route('/superSpotter/')
 def super_spotter():
     return render_template("superspotter.html", name="Super Spotter", description=getDescription("Home"))
-
+"""
 
 @app.route('/')
 def home():
     #   I want to make a method for the code below, but have other important things to do
     return render_template("index.html", name="Home", description=getDescription("Home"))
 
-
+"""
 @app.route('/about/')
 def about():
     return render_template("about.html", name="About", description=getDescription("About"))
@@ -173,17 +173,17 @@ def login():
 def projects_id(projectname):
     if projectname == "UCSD":
         desP = ["Center for Energy Research", "Cancer Center"]  # what is desP supposed to mean? idk
-        detail = ["""
+        detail = [
                   At the Center for Energy Research and the University of San Diego, California, I attempted to find optimal computer vision settings
                   (with OpenCV) for detecting the sun to aid the solar panels at UCSD. Much of this internship required optical and machine-learning-oriented knowledge.","At the Moores Cancer Research Center, I utilized my knowledge of data processing and Java to interpret genome files (.MAF). These mutation annotation format files, then, can be used to identify patterns in mutations within specific cancer types.
-                  """]
+                  ]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
     elif projectname == "skinCAM":
         desP = ["skinCAM"]
-        detail = ["""
+        detail = [
             A child of my imagination, skinCAM, a patent-pending app, was created to allow for public access to dermatologic resources.
             By utilizing machine learning, skinCAM accurately detects many skin diseases - all for the price of, well, nil.
-                 """]
+                 ]
         return render_template("project.html", name=projectname, titlesD=desP, details=detail, images=jsonMD["Projects"][projectname]["images"])
     elif projectname == "MSH":
         desP = ["MySocialHub"]
@@ -200,6 +200,7 @@ def page_not_found(e):
     return render_template("404.html", name="404", description="There's nothing to see here.")
 
 
+"""
 if __name__ == '__main__':
     if os.environ.get("TEST", None) is None:  # In case of Heroku & local
         app.run(debug=True)

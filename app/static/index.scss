@@ -1,12 +1,26 @@
 $gradient: linear-gradient(to right, rgba(220,36,48, 1), rgba(123,67,151, 1));
-@mixin gradient($opacity) {
-     @return linear-gradient(to right, rgba(220,36,48, $opacity), rgba(123,67,151, $opacity));
+$dark: #222;
+@mixin gradient($opacity, $x: 0deg) {
+     background: linear-gradient($x, rgba(220,36,48, $opacity), rgba(123,67,151, $opacity));
 }
 
 @mixin linear-gradient($args...) {
   background: rgba(123,67,151, 1);
   background: -webkit-linear-gradient($args);
   background: linear-gradient($args);
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../generated/Gilroy-Light.otf");
+}
+
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url("../generated/Gilroy-ExtraBold.otf");
+}
+* {
+  font-family: "Gilroy";
 }
  .tg td,.tg th{
     font-family:Arial,sans-serif;
@@ -26,19 +40,20 @@ $gradient: linear-gradient(to right, rgba(220,36,48, 1), rgba(123,67,151, 1));
     transform:translate(-50%,-50%)
 }
 body,html{
-    background:black;
+    background:#222;
     max-width:100%;
     overflow-x:hidden
 }
 h1{
-    text-align:center
+  font-family: "Gilroy Bold", "Arial Black";
 }
 .tg .tg-0lax,.tg .tg-s268{
     text-align:left
 }
 .page-footer{
     margin-bottom: 50px;
-    background:black!important
+    background:black!important;
+    height: auto;
 }
 .footer-copyright{
     background:#000023!important
@@ -56,7 +71,7 @@ body{
     font-weight:400
 }
 #contact-form,#nm-text{
-    font-family:'Work Sans';
+    font-family:'Gilroy';
      font-weight: lighter;
 }
 .tg .tg-0lax{
@@ -156,12 +171,12 @@ tr{
     padding:0!important
 }
 .header-text{
-    font-family:'Titillium Web';
+    font-family:'Gilroy Bold';
     margin-left:10%;
     margin-right:10%
 }
 .bold {
-    font-family:'Titillium Web';
+    font-family:'Gilroy Bold';
 }
 table,td{
     margin:0 auto;
@@ -175,13 +190,13 @@ td{
     border-radius:20px;
     background:#000;
     font-size:4rem;
-    text-align:center!important
+    text-align:center!important;
 }
 .backdrop{
     background-color:#ff5400
 }
 .light-text{
-    font-family:'Work Sans'
+    font-family:'Gilroy'
 }
 #nav-logo{
     margin-top:10px
@@ -197,22 +212,18 @@ td{
     display:block;
     margin:0 auto!important
 }
-.divider,.transparent{
-    background:0 0;
-     box-shadow: none;
-     -moz-box-shadow: none;
-     -webkit-box-shadow: none;
+
+::-webkit-scrollbar {
+  width: 8px;
 }
-.divider{
-    width:2%!important
+
+::-webkit-scrollbar-track {
+  background: $dark;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
-.fixed{
-    position:fixed;
-    z-index:999
-}
- body::-webkit-scrollbar {
-     display: none;
-     // Safari and Chrome
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgba(220,36,48, 1), rgba(123,67,151, 1));
 }
  blockquote {
      border-left: 5px solid red !important;
@@ -250,7 +261,7 @@ td{
      padding: 20px;
 }
  #nav-mobile {
-     background: #222;
+   background: #222;
 }
  .not-so-black-text {
    color: #222;
@@ -288,7 +299,7 @@ footer {
 }
  @media screen and (max-width: 650px) {
      .page-footer {
-         margin-top: -50px !important;
+         margin-top: -65px !important;
     }
      #experience {
          min-height: 550px !important;
@@ -299,7 +310,7 @@ footer {
 }
  @media screen and (min-width: 651px) {
      .page-footer {
-         margin-top: -100px !important;
+         margin-top: -50px !important;
     }
 }
  #nm-text {
@@ -345,7 +356,7 @@ footer {
  .error-msg {
      font-size: 20px;
      font-weight: 800;
-     font-family: 'Work Sans';
+     font-family: 'Gilroy';
      border-radius: 5px;
 }
  .code {
@@ -403,11 +414,11 @@ footer {
      background: #000134 !important;
 }
  .ultralight {
-     font-family: 'Work Sans';
+     font-family: 'Gilroy';
      font-weight: lighter;
 }
  .light {
-     font-family: 'Work Sans';
+     font-family: 'Gilroy';
      font-weight: 200;
 }
  .medium-thicc {
@@ -431,7 +442,7 @@ footer {
  #login-form {
      width: 80%;
      h1 {
-         font-family: 'Work Sans';
+         font-family: 'Gilroy', Arial;
          font-weight: lighter;
     }
      margin-left: 10%;
@@ -440,7 +451,7 @@ footer {
          border-radius: 10px;
          input {
              border-bottom: none !important;
-             font-family: 'Work Sans', Arial;
+             font-family: 'Gilroy', Arial;
              font-weight: 200;
              margin: 0;
         }
@@ -472,3 +483,26 @@ footer {
      border-radius: 50%;
      cursor: pointer;
 }
+
+ /*
+  IMPORTANT STYLING
+  */
+
+#about {
+  #about-image, #logo {
+    min-width: 25%;
+    max-width: 250px;
+  }
+  @media screen and (max-width: 650px) {
+    #about-image, #logo {
+      width: 100%;
+    }
+  }
+}
+h3 {
+  font-family: "Gilroy Bold";
+}
+.text-xl {
+  font-size: 3rem;
+}
+

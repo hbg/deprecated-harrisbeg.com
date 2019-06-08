@@ -130,8 +130,7 @@
         <h1 class="black-text">Loading...</h1> <!--Fix this & add content-->
     </div>
     <div id="content">
-
-     <nav class="fixed z-depth-0" id="nav">
+        <nav class="fixed z-depth-0" id="nav">
          <div class="nav-wrapper container" style="width: 90% !important;">
 
              <a href="{{url_for('home')}}">
@@ -143,25 +142,10 @@
                      {{ logo(60, 60) }}
                  </li>
 
-                 <li><a href="{{url_for('home')}}" class="theme-color"><code>Home</code></a></li>
-                 <li><a href="{{url_for('about')}}" class="theme-color"><code>About</code></a></li>
-                 <li><a href="{{url_for('projects')}}" class="theme-color"><code>Projects</code></a></li>
-                 <li><a href="{{url_for('design')}}" class="theme-color"><code>Design</code></a></li>
-                 <li>
-                     <a class="light"><i class="fab fa-linkedin theme-color" onClick="window.location = 'https://www.linkedin.com/in/harrisbegcca/'"></i></a>
-                     <a class="light" href="mailto:harris@harrisbeg.com"><i class="fas fa-envelope-square theme-color"></i></a>
-                     <a class="light"><i class="fab fa-twitter-square theme-color" onClick="window.location = 'https://twitter.com/harrisb19'"></i></a>
-                 </li>
              </ul>
-             <ul class="right hide-on-med-and-down" id="desktop-pages">
-                 <li class="page-item tooltipped" data-position="bottom" data-tooltip="Home"><a class="not-so-black-text" href="{{url_for('home')}}"><i class="material-icons">home</i></a></li>
-                 <li class="page-item tooltipped" data-position="bottom" data-tooltip="About"><a class="not-so-black-text" href="{{url_for('about')}}"><i class="material-icons">account_circle</i></a></li>
-                 <li class="page-item tooltipped" data-position="bottom" data-tooltip="Work"><a class="not-so-black-text" href="{{url_for('projects')}}"><i class="material-icons">work</i></a></li>
-                 <li class="page-item tooltipped" data-position="bottom" data-tooltip="Design"><a class="not-so-black-text" href="{{url_for('design')}}"><i class="material-icons">color_lens</i></a></li>
-             </ul>
-             <a href="#" data-target="nav-mobile" class="sidenav-trigger right hide-on-large-only"><i class="material-icons theme-color">menu</i></a>
          </div>
      </nav>
+        {% if header %}
         <div class="scrollable">
             <div class="mdiv">
                 {{ logo(100, 100) }}
@@ -174,6 +158,7 @@
 			    </h3>
             </div>
         </div>
+    {% endif %}
         {% block content %} {% endblock %}
     </div>
     <script>

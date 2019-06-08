@@ -1,0 +1,3 @@
+{% macro image(src, id) %}
+    <img src="{{ src|default("https://via.placeholder.com/300x300") }}" {% if id %} id="{{ id }}"{% endif %} alt="src" class="image"/>
+{% endmacro %}

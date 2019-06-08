@@ -1,0 +1,126 @@
+<div id="projects" class="container black animated bounce wow">
+                <p class="white-text flow-text code" id="experienceText">
+                    <span class="grey-text darken-1"># Some of my skills include:</span>
+                    <br/>
+                    <span class="deep-purple-text text-lighten-2">skills</span> =
+                    [
+                    <span class="green-text text-darken-2 segment-c">"graphic design"</span>,
+                    <span class="green-text text-darken-2 segment-c">"programming"</span>,
+                    <span class="green-text text-darken-2 segment-c">"editing"</span>,
+                    <span class="green-text text-darken-2 segment-c">"hardware"</span>
+                    ]
+                    <br/>
+                    <span class="grey-text darken-1"># My interests are:</span>
+                    <br/>
+                    <span class="deep-purple-text text-lighten-2">interests</span> =
+                    [
+                    <span class="green-text text-darken-2 segment-c">"programming"</span>,
+                    <span class="green-text text-darken-2 segment-c">"drawing</span>,
+                    <span class="green-text text-darken-2 segment-c">"hiking"</span>,
+                    <span class="green-text text-darken-2 segment-c">"watching sci-fi"</span>
+                    ]
+                    <br/>
+                    <span class="grey-text darken-1"># My achievements include:</span>
+                    <br/>
+                    <span class="deep-purple-text text-lighten-2">achievements</span> =
+                    [
+                    <span class="white-text">
+                        <br/>
+                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Web Developer for MySocialHub"</span>),
+                        <br/>
+                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Pending Patent"</span>),
+                        <br/>
+                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Kaiser Permanente Award for Healthcare"</span>),
+                        <br/>
+                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Frontend Developer for Grabify"</span>),
+                        <br/>
+                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Intern at UCSD"</span>),
+                        <br/>
+                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"4.8 GPA"</span>)
+                        <br/>
+                    </span>
+
+                    ]
+                    <br/>
+                    {# <span class="grey-text darken-1"># 2015:</span>  #}
+
+                </p>
+            </div>
+			</div>
+
+			<div class="big" id="experience">
+				<h1 class="theme-color header-text wow animated bounceInLeft center">Experience</h1>
+				<table class="responsive-table  animated bounce wow">
+				<tbody class="main">
+					<tr>
+
+						<td class="roll-cell" style="background: linear-gradient(to right, #f12711, #f5af19);">
+							<h4 class="black-text bold">Languages</h4>
+							<h4>
+								<i class="devicon-python-plain tooltipped black-text" data-position="top" data-tooltip="Python"></i>
+								<i class="devicon-java-plain tooltipped black-text" data-position="top" data-tooltip="Java"></i>
+								<i class="devicon-javascript-plain tooltipped black-text" data-position="top" data-tooltip="JS"></i>
+								<i class="devicon-swift-plain tooltipped black-text" data-position="top" data-tooltip="Swift"></i>
+								<i class="devicon-css3-plain tooltipped black-text" data-position="top" data-tooltip="CSS"></i>
+								<i class="devicon-sass-original tooltipped black-text" data-position="top" data-tooltip="SASS"></i>
+								{# Not a language but oh well ^ #}
+							</h4>
+
+						</td>
+						<td class="divider"></td>
+
+						<td class=" roll-cell" style="background: linear-gradient(to right, #00C9FF, #92FE9D);">
+								<h4 class="black-text bold">Utilities</h4>
+							<h4>
+								<i class="devicon-heroku-original tooltipped black-text" data-position="top" data-tooltip="Heroku"></i>
+								<i class="devicon-illustrator-line tooltipped black-text" data-position="top" data-tooltip="Illustrator"></i>
+								<i class="devicon-bitbucket-plain tooltipped black-text" data-position="top" data-tooltip="BitBucket"></i>
+								<i class="devicon-android-plain tooltipped black-text" data-position="top" data-tooltip="Android Studio"></i>
+								<i class="devicon-git-plain tooltipped black-text" data-position="top" data-tooltip="git flow"></i>
+								<i class="devicon-photoshop-line tooltipped black-text" data-position="top" data-tooltip="Photoshop"></i>
+							</h4>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div class="big side-margin">
+				<div class="vertical-div-small">
+					</div>
+                <h1 class="theme-color header-text wow animated bounceInLeft center">Past Work</h1>
+                <div class="row round background-theme companies" >
+					<div class="col s4 company">
+						<a href="{{url_for('projects_id',projectname='Grabify')}}">
+							<img src="{{ url_for('static', filename='assets/grabify.png') }} "class="height-row-adj center tooltipped" data-position="top" data-tooltip="Grabify"/>
+						</a>
+					</div>
+					<div class="col s4 company">
+						<a href="http://www.technologicoders.weebly.com">
+							<img src="{{ url_for('static', filename='assets/tc.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="TechnologiCoders"/>
+						</a>
+					</div>
+					<div class="col s4 company">
+						<a href="{{url_for('projects_id',projectname='skinCAM')}}">
+								<img src="{{ url_for('static', filename='assets/sc_app_icon.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="skinCAM"/>
+						</a>
+					</div>
+				</div>
+				<div class="row companies round background-theme big-margin " >
+					<div class="col s4  company">
+						<a href="{{url_for('projects_id',projectname='MSH')}}">
+							<img src="{{ url_for('static', filename='assets/msh.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="MySocialHub"/>
+						</a>
+					</div>
+					<div class="col s4 company">
+						<a href="{{url_for('projects_id',projectname='UCSD')}}">
+							<img src="{{ url_for('static', filename='assets/cer.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="UCSD Center for Energy Research" />
+						</a>
+					</div>
+					<div class="col s4 company">
+						<a href="{{url_for('projects_id',projectname='UCSD')}}">
+							<img src="{{ url_for('static', filename='assets/mcc.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="UCSD Moores Cancer Center"/>
+						</a>
+                    </div>
+				</div>
+
+			</div>

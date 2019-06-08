@@ -1,9 +1,75 @@
 {% extends "structure.html" %}
+{% from "partials/_functions.html" import image with context %}
 {% block content %}
-		<div class="big " id="what-i-do">
-			<div class="row">
-			{# <h1 class="white-text header-text wow animated bounceInLeft">What I Do</h1>  #}
-		</div>
+		<div class="container" style="margin-top: 70px">
+            <div id="about">
+
+                    {{ image(src="https://media.licdn.com/dms/image/C5603AQGU_OYB_qsooQ/profile-displayphoto-shrink_200_200/0?e=1563408000&v=beta&t=o_VK9yzF6xu1D7nxojwzNMWf_QPPhKuIwpIUxrzaxc8",id="about-image") }}
+                    <h1 class="white-text wow animated bounceInUp rellax">Hey, I'm Harris!</h1>
+                    <h4 class="white-text wow animated bounceInUp">
+                        I'm a software developer from Canyon Crest Academy who does everything from
+                        develop machine learning for medical solutions, develop websites (such as this one),
+                        teach children, and work on apps. If you're on this site looking for my
+                        extracurricular activities, you'll find that I've only listed my "personal" projects - for
+                        achievements, feel free to <a href="mailto:harrisbegca@gmail.com">contact me</a>.
+                    </h4>
+                    <h1 class="white-text">What I specialize in</h1>
+                    <h3>
+                        <i class="devicon-javascript-plain tooltipped colored text-xl" data-position="top" data-tooltip="JS"></i>
+                        <i class="devicon-python-plain tooltipped colored text-xl" data-position="top" data-tooltip="Python"></i>
+                        <i class="devicon-swift-plain tooltipped colored text-xl" data-position="top" data-tooltip="Swift"></i>
+                        <i class="devicon-java-plain tooltipped colored text-xl" data-position="top" data-tooltip="Java"></i>
+                        <i class="devicon-css3-plain tooltipped colored text-xl" data-position="top" data-tooltip="CSS"></i>
+                        <i class="devicon-sass-plain tooltipped colored text-xl" data-position="top" data-tooltip="SASS"></i>
+                    </h3>
+                    <h1 class="white-text wow animated bounceInUp">Projects</h1>
+                    <table>
+                        <tr>
+                            <h3 class="white-text wow animated bounceInUp theme-color">skinCAM - Present</h3>
+                            <h4 class="white-text wow animated bounceInUp">
+                                A direct result of my imagination, skinCAM was spawned in an effort
+                                to intertwine the advancing world of machine learning and artificial
+                                intelligence in the realm of medical sciences - specifically, in this
+                                case, dermatology. skinCAM is available on the Play Store and uses
+                                a Convolutional Neural Network trained with 10 skin diseases to provide
+                                results with ~95% accuracy.
+                            </h4>
+                            <h3 class="white-text wow animated bounceInUp theme-color">Grabify - Present</h3>
+                            <h4 class="white-text wow animated bounceInUp">
+                                Grabify is an IP-logging utility used by millions on a monthly basis.
+                                As a co-developer of Grabify, I helped systematically connect the well-established
+                                backend services to the user experience, pulling from the knowledge developed at MySocialHub.
+                            </h4>
+                            <h3 class="white-text wow animated bounceInUp theme-color">Hypercharged - Present</h3>
+                            <h4 class="white-text wow animated bounceInUp">
+                                Built the entirety of <a href="http://hypercharged.herokuapp.com">hypercharged's website</a>,
+                                a site boasting a wide selection of car photos, with a shop in the making in order to
+                                make Hypercharged more than just a simple side project.
+                            </h4>
+                            <h3 class="white-text wow animated bounceInUp theme-color">Breast Cancer Pathway Analysis - Sep. 2018 to Jun. 1</h3>
+                            <h4 class="white-text wow animated bounceInUp">
+                                Using my experience with web scraping, I scraped the data from over
+                                900 patients to generate a frequency chart of mutated genes within breast cancer,
+                                under the supervision of Dr. Igor Tsigelny. With the scraped genes, several
+                                gene "pathways" were elucidated with low P-values, including the ECM-Receptor interaction
+                                with a P-value of 1E-12, thereby suggesting that the ECM-Receptor interaction may play
+                                a role in breast cancer.
+                            </h4>
+                            <h3 class="white-text wow animated bounceInUp theme-color">MySocialHub - Present</h3>
+                            <h4 class="white-text wow animated bounceInUp">
+                                Assisted in the creation of the largest car community
+                                social media platform on the web, known as MySocialHub. As a developer
+                                for MySocialHub, I frequently interacted with the MVC Laravel structure, Git workflow,
+                                and frontend components that made the platform as popular as it is.
+                            </h4>
+                            <h3 class="white-text wow animated bounceInUp theme-color">For more projects, please see my GitHub.</h3>
+                        </tr>
+                    </table>
+                    <h1 class="white-text wow animated bounceInUp">
+                        All as a high-school student who only really started delving into CS in the 9th Grade.
+                    </h1>
+            </div>
+        </div>
             {#
 			<table class="responsive-table  animated bounce wow">
 				<tbody class="main">
@@ -31,130 +97,5 @@
 				</tbody>
 			</table>
 			 #}
-            <div id="projects" class="container black animated bounce wow">
-                <p class="white-text flow-text code" id="experienceText">
-                    <span class="grey-text darken-1"># Some of my skills include:</span>
-                    <br/>
-                    <span class="deep-purple-text text-lighten-2">skills</span> =
-                    [
-                    <span class="green-text text-darken-2 segment-c">"graphic design"</span>,
-                    <span class="green-text text-darken-2 segment-c">"programming"</span>,
-                    <span class="green-text text-darken-2 segment-c">"editing"</span>,
-                    <span class="green-text text-darken-2 segment-c">"hardware"</span>
-                    ]
-                    <br/>
-                    <span class="grey-text darken-1"># My interests are:</span>
-                    <br/>
-                    <span class="deep-purple-text text-lighten-2">interests</span> =
-                    [
-                    <span class="green-text text-darken-2 segment-c">"programming"</span>,
-                    <span class="green-text text-darken-2 segment-c">"drawing</span>,
-                    <span class="green-text text-darken-2 segment-c">"hiking"</span>,
-                    <span class="green-text text-darken-2 segment-c">"watching sci-fi"</span>
-                    ]
-                    <br/>
-                    <span class="grey-text darken-1"># My achievements include:</span>
-                    <br/>
-                    <span class="deep-purple-text text-lighten-2">achievements</span> =
-                    [
-                    <span class="white-text">
-                        <br/>
-                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Web Developer for MySocialHub"</span>),
-                        <br/>
-                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Pending Patent"</span>),
-                        <br/>
-                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Kaiser Permanente Award for Healthcare"</span>),
-                        <br/>
-                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Frontend Developer for Grabify"</span>),
-                        <br/>
-                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"Intern at UCSD"</span>),
-                        <br/>
-                        <span class="pink-text text-accent-3 segment-c">Achievement</span>(<span class="segment-c green-text text-darken-2">"4.8 GPA"</span>)
-                        <br/>
-                    </span>
 
-                    ]
-                    <br/>
-                    {# <span class="grey-text darken-1"># 2015:</span>  #}
-
-                </p>
-            </div>
-			</div>
-
-			<div class="big" id="experience">
-				<h1 class="theme-color header-text wow animated bounceInLeft center">Experience</h1>
-				<table class="responsive-table  animated bounce wow">
-				<tbody class="main">
-					<tr>
-						
-						<td class="roll-cell" style="background: linear-gradient(to right, #f12711, #f5af19);">
-							<h4 class="black-text bold">Languages</h4>
-							<h4>
-								<i class="devicon-python-plain tooltipped black-text" data-position="top" data-tooltip="Python"></i>
-								<i class="devicon-java-plain tooltipped black-text" data-position="top" data-tooltip="Java"></i>
-								<i class="devicon-javascript-plain tooltipped black-text" data-position="top" data-tooltip="JS"></i>
-								<i class="devicon-swift-plain tooltipped black-text" data-position="top" data-tooltip="Swift"></i>
-								<i class="devicon-css3-plain tooltipped black-text" data-position="top" data-tooltip="CSS"></i>
-								<i class="devicon-sass-original tooltipped black-text" data-position="top" data-tooltip="SASS"></i>
-								{# Not a language but oh well ^ #}
-							</h4>
-
-						</td>
-						<td class="divider"></td>
-
-						<td class=" roll-cell" style="background: linear-gradient(to right, #00C9FF, #92FE9D);">
-								<h4 class="black-text bold">Utilities</h4>
-							<h4>
-								<i class="devicon-heroku-original tooltipped black-text" data-position="top" data-tooltip="Heroku"></i>
-								<i class="devicon-illustrator-line tooltipped black-text" data-position="top" data-tooltip="Illustrator"></i>
-								<i class="devicon-bitbucket-plain tooltipped black-text" data-position="top" data-tooltip="BitBucket"></i>
-								<i class="devicon-android-plain tooltipped black-text" data-position="top" data-tooltip="Android Studio"></i>
-								<i class="devicon-git-plain tooltipped black-text" data-position="top" data-tooltip="git flow"></i>
-								<i class="devicon-photoshop-line tooltipped black-text" data-position="top" data-tooltip="Photoshop"></i>
-							</h4>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			</div>
-			<div class="big side-margin">
-				<div class="vertical-div-small">
-					</div>
-                <h1 class="theme-color header-text wow animated bounceInLeft center">Past Work</h1>
-                <div class="row round background-theme companies" >
-					<div class="col s4 company">
-						<a href="{{url_for('projects_id',projectname='Grabify')}}">
-							<img src="{{ url_for('static', filename='assets/grabify.png') }} "class="height-row-adj center tooltipped" data-position="top" data-tooltip="Grabify"/>
-						</a>
-					</div>
-					<div class="col s4 company">
-						<a href="http://www.technologicoders.weebly.com">
-							<img src="{{ url_for('static', filename='assets/tc.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="TechnologiCoders"/>
-						</a>
-					</div>
-					<div class="col s4 company">
-						<a href="{{url_for('projects_id',projectname='skinCAM')}}">
-								<img src="{{ url_for('static', filename='assets/sc_app_icon.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="skinCAM"/>
-						</a>
-					</div>
-				</div>
-				<div class="row companies round background-theme big-margin " >
-					<div class="col s4  company">
-						<a href="{{url_for('projects_id',projectname='MSH')}}">
-							<img src="{{ url_for('static', filename='assets/msh.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="MySocialHub"/>
-						</a>
-					</div>
-					<div class="col s4 company">
-						<a href="{{url_for('projects_id',projectname='UCSD')}}">
-							<img src="{{ url_for('static', filename='assets/cer.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="UCSD Center for Energy Research" />
-						</a>
-					</div>
-					<div class="col s4 company">
-						<a href="{{url_for('projects_id',projectname='UCSD')}}">
-							<img src="{{ url_for('static', filename='assets/mcc.png') }}" class="height-row-adj center tooltipped" data-position="top" data-tooltip="UCSD Moores Cancer Center"/>
-						</a>
-                    </div>
-				</div>
-
-			</div>
 {% endblock %}
