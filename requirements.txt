@@ -35,4 +35,4 @@ rsa==4.0
 six==1.11.0
 urllib3==1.24.2
 webassets==0.12.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
